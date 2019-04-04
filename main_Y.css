@@ -1,0 +1,93 @@
+html {
+    background: #e6e9e9;
+}
+
+body 
+{
+    font-family: Comfortaa;
+    background: #fff;
+    text-align: center;
+    width:auto;
+    height: 530px;
+    top: 20%;
+    right: 35%;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .2);
+    position: absolute;
+}
+
+.tela 
+{
+    Width:600px;
+    Height:800px;
+  
+    Text-align:center;
+    
+}
+
+.tela input
+{
+    display: block;
+    Width:45%;                                                            
+   
+    
+    margin: 10px 10px 30px 160px;
+    padding: 5px;
+   
+    float: center;
+	
+}
+
+.tela label
+{
+    Width:80px;
+    Margin: 5px 250px 10px 15px;
+   
+    color:#5b1a04;
+    font-family: Comfortaa;
+ 
+}
+
+
+
+.tela button
+{
+    background:#6b3725;
+    color: bisque;
+    font-family: Comfortaa;
+    font-size:14px;
+    width:160px;
+    height:50px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .2);
+    Margin: 40px 10px 10px 15px;
+    padding: 5px;
+    
+    
+}
+ 
+h2
+{
+    font-family: Comfortaa;
+    color:#000000;
+    font-size:30px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px
+    
+    
+}
+
+h5 {
+    font-family:Comfortaa ;
+    color: #5b1a04;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: -20px;
+}
+
+@font-face{
+    
+    font-family:Comfortaa;
+    src:url(letra/ComfortaaRegular.ttf);
+}
+
+

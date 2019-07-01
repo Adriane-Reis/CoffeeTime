@@ -1,0 +1,404 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/05/2019, 20:45:19
+    Author     : adriano
+*/
+
+
+.modal-login {
+    width: 350px;
+
+}
+
+.modal-login .modal-content {
+    padding: 30px;
+    border-radius: 40px;
+    border: none;
+}
+
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+}
+
+.modal-login .form-control,
+.modal-login .btn {
+    min-height: 40px;
+    border-radius: 1px;
+}
+
+.modal-login .hint-text {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.modal-login .btn {
+    background: #3498db;
+    border: none;
+    line-height: normal;
+}
+
+.modal-login .btn:hover,
+.modal-login .btn:focus {
+    background: #248bd0;
+}
+
+.modal-login .hint-text a {
+    color: #999;
+}
+
+
+
+/*BOTÃO*/
+.send {
+  background: none;
+  color: white;
+  border: 1px solid #8d3d07;
+  border-radius: 70px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color:#8d3d07; 
+  outline: none;
+  padding: 15px 100px;   
+  transition: padding 500ms ease-in-out;
+  box-shadow: 0 0 0 0 rgba(181, 114, 38, 0.2);
+   transition: background, padding 500ms ease-in-out;
+    
+}
+
+.send:hover{
+  background: #8d3d07;
+    color:white;
+    transition: 0.5s;
+    
+}
+.send.is-success {
+  background: #8d3d07;
+  padding: 15px 17px}
+
+.is-success span {
+  display: none;
+}
+
+svg {
+  width: 0;
+  height: 0;
+}
+
+.is-success svg {
+  height: 30px;
+  width: 30px;
+}
+
+.send.is-loading {
+  padding: 15px 30px;
+  animation: pulse 1.5s infinite;
+}
+
+.is-loading span {
+  display: none;
+}
+
+.check {
+  stroke-dasharray: 130px 130px;
+  stroke-dashoffset: 130px;
+  transition: stroke-dashoffset 500ms ease-in-out;
+}
+
+.is-success .check {
+  stroke-dashoffset : 0px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(181, 114, 38, 0.2);
+  }
+  100% {
+    transform: scale(.9);
+    box-shadow: 0 0 0 0 rgba(181, 114, 38, 0.2);
+  }
+}
+
+ 
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Comfortaa, Tahoma, sans-serif;
+    font-size: 11px;
+}
+ 
+@font-face {
+                    
+                font-family: Comfortaa;
+                src: url(../letra/ComfortaaLight.ttf)
+                
+}   
+ 
+* {
+    margin: 0;
+    padding:0;
+}
+            
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.mainform {
+    
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /*margin-right: 20%;*/
+    
+    padding: 90px;
+    background-color: white;
+    font-family: Comfortaa;
+    width: 550px;
+   position: relative;
+    z-index: 4;
+}
+
+
+/* campos de preenchimento 
+input[type=text]{
+  width: 10px;
+  padding: 8px;
+  margin: 29px -10px 10px -25px;align-content: 
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  background-color: white;
+  outline: none;
+}*/
+
+
+#fundoexterno{
+
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+
+#fundo{
+    
+    position: fixed;
+    width: 100%;
+    height:100%;
+    background-image : url(../img/cafes.jpg);
+    position: fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    
+    z-index: 2;
+
+}
+
+#logo{
+    position:absolute;
+    z-index:3;
+    top:2%;
+    left:-2%;
+}
+
+
+
+/*.bodysquare{
+    
+    
+    background-image : url(/coffeeBreak_torradascoradas.png);
+    position: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    
+        
+    
+}*/
+
+
+/* Overwrite default styles of hr */
+ 
+h4{
+    text-align: center;
+    font-family: Comfortaa;
+    font-size: 19px;
+    color: #8d3d07;
+    text-decoration-line: underline;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+h1, p{
+        
+    text-align: center;
+}
+
+.mainform input[type=text] {
+    
+   
+    padding: 8px;
+    margin: 29px -10px 10px -24px;
+    border: none;
+    background: #f1f1f1;
+    background-color: white;
+    outline: none;
+    font-size: 12.5px;
+    border: none;
+    border-bottom-color: dimgrey;
+    border-bottom: solid 1px #DDDDDD;
+    width: 100%;
+
+    
+    
+}
+
+.mainform input[type=password] {
+    
+   
+    padding: 8px;
+    margin: 29px -10px 10px -24px;
+    border: none;
+    background: #f1f1f1;
+    background-color: white;
+    outline: none;
+    font-size: 12.5px;
+    border: none;
+    border-bottom-color: dimgrey;
+    border-bottom: solid 1px #DDDDDD;
+    width: 100%;
+
+    
+    
+}
+
+#btn{
+    
+    
+    font-family: Comfortaa;
+    font-weight: bolder;
+    position: relative;
+    top: 40px;
+    font-size: 15px;
+    height: 29px;
+    width: 100%;
+    border-radius: 10px;
+    
+
+    
+}
+
+
+.mainform label{
+
+    font-size: bold;
+    color: #8d3d07;
+    margin: -24px -10px 10px -29px;
+    padding: 5px;
+    font-size:15px;
+ 
+}
+
+#radiobtn1, #radiobtn2, #radiobtn3{
+    
+    color: aquamarin;
+    font: 10px;
+    margin-left: 30px;
+    position: relative;
+}
+
+#T1 {
+    
+     font-weight: bold;
+    color: #8d3d07;
+    margin: -30px -10px 10px -24px;
+    padding: 10px;
+    font-size:20px;
+    
+}
+    
+#T2{
+    
+    color: #8d3d07;
+    
+            /*margem para cima = -10; margem para sla; margem para sla; margem para o deslocamento horizontal = -24px*/
+    margin: -10px -10px 0px -24px;
+    padding: 10px;
+    font-size:12px;
+    
+}  
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #8d3d07;
+  color: white;
+  padding: 28px 75px 40px;
+  border: none;
+  cursor: pointer;
+  /*width: 100%;*/
+  
+
+}
+
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #ffffff;
+  text-align: center;
+}
+ 
+#termos{
+    margin-top: 20px;
+}
+
+/*ESTILO MODAL TERMOS*/
+.termo-div{
+    width: 500px;
+    height: 1500px;
+}
+
+
+
+
+@media screen and (max-width:1108px){
+    #logo{
+        z-index: 1;
+        
+    }
+    
+}

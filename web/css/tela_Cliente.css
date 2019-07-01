@@ -1,0 +1,896 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/05/2019, 21:04:43
+    Author     : adriano
+*/
+/*VIDEO*/
+
+
+
+#backfoto{
+ background: url(../img/foto-video.PNG) no-repeat center center;
+    width:100% ;
+    height: 750px;
+   -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+
+.send {
+  background: none;
+  color: #8d3d07;
+  border: 1px solid #8d3d07;
+  border-radius: 70px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color:#8d3d07; 
+  outline: none;
+  padding: 15px 100px;   
+  transition: padding 500ms ease-in-out;
+  box-shadow: 0 0 0 0 rgba(181, 114, 38, 0.2);
+   transition: background, padding 500ms ease-in-out;
+    
+}
+
+.send:hover{
+  background: #8d3d07;
+    color:white;
+    transition: 0.5s;
+    
+}
+
+
+.alert_list {
+  font-size: 11px;
+  color: grey;
+}
+li.alert_li {
+  font-size: 11px;
+  color: grey;
+  border-bottom: thin solid #c0c0c0;
+  list-style-type: none;
+    
+}
+li.alert_li:hover {
+  background-color: #eee;
+}
+.turn_off_alert {
+  float: right;
+  margin-bottom: 1px;
+}
+a.alert_message {
+  color: grey;
+}
+a.alert_message:hover {
+  color: grey;
+}
+
+.unstyled{
+    padding: 0;
+}
+/*ESTILO MODAL LOGIN*/
+.modal-login {
+    width: 100%;
+    
+
+}
+.modal-login .modal-content {
+    padding: 30px;
+    border-radius: 40px;
+    border: none;
+}
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+}
+.modal-login .form-control, .modal-login .btn {
+    min-height: 40px;
+    border-radius: 1px; 
+}
+.modal-login .hint-text {
+    text-align: center;
+    padding-top: 10px;
+}
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-login .btn {
+    background: #3498db;
+    border: none;
+    line-height: normal;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+    background: #248bd0;
+}
+.modal-login .hint-text a {
+    color: #999;
+}
+
+.form-group button{
+
+
+    background:#6b3725;
+    color: bisque;
+    font-family: Comfortaa;
+    font-size:14px;
+    width:160px;
+    height:50px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .2);
+    Margin: 150px 146px 10px ;
+    padding: 5px;
+
+
+}
+
+.form-group input{
+
+    border: none;
+    border-bottom-color: dimgrey;
+    border-bottom: solid 1px #DDDDDD;
+}
+
+
+
+
+/*Carousel*/
+
+#carousel {
+  
+  height: 400px;
+ 
+  transform: translateY(40px) ;
+  overflow: hidden;
+}
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+}
+#carousel div img {
+  width: 200px;
+  transition: width 1s;
+}
+#carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
+#carousel div.hideLeft img {
+  width: 50px;
+}
+#carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
+#carousel div.hideRight img {
+  width: 50px;
+}
+#carousel div.prev {
+  z-index: 5;
+  left: 30%;
+  transform: translateY(50px) translateX(-50%);
+}
+#carousel div.prev img {
+  width: 140px;
+}
+#carousel div.prevLeftSecond {
+  z-index: 4;
+  left: 15%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
+#carousel div.prevLeftSecond img {
+  width: 80px;
+}
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%);
+}
+#carousel div.next {
+  z-index: 5;
+  left: 70%;
+  transform: translateY(50px) translateX(-50%);
+}
+#carousel div.next img {
+  width: 140px;
+}
+#carousel div.nextRightSecond {
+  z-index: 4;
+  left: 85%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
+#carousel div.nextRightSecond img {
+  width: 80px;
+}
+
+
+
+
+
+
+
+.registerbtn {
+  background-color: #8d3d07;
+  color: white;
+  padding: 28px 75px 40px ;
+  border: none;
+  cursor: pointer;
+
+  
+
+}
+
+ 
+#btn{
+    
+    
+    font-family: Comfortaa;
+    position: relative;
+    top: 450px;
+    font-family: Comfortaa;
+    
+    height: 29px;
+    border-radius: 25px;
+
+    
+}
+
+
+p{
+    margin-left: auto;
+}
+
+/*Estilo de Letra*/
+@font-face{
+
+    font-family: Comfortaa;
+    src:url(../letra/ComfortaaRegular.ttf);
+}
+
+
+
+/*CORPO*/
+.corpo{
+    font-family: Comfortaa;
+    color: #6b3725;
+}
+
+
+/* Imagens*/
+
+
+
+#fundo{
+    background: url(../img/clienteTela.png) no-repeat center center fixed;
+
+    margin-top: -24px;
+    padding-top: 900px;
+    padding-bottom: 200px;
+
+
+
+    background-attachment: inherit;
+    background-position: center center;
+    min-height: 650px;
+    width: 100%;
+
+    max-height:650px ;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+
+}
+
+.letra{
+    position: absolute;
+    font-family: Comfortaa;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    color:white;
+    padding-top:10px;
+    padding-bottom:20px;
+    
+    line-height:60px;
+    z-index: 2;
+    
+    
+}
+
+
+/*rodapé*/
+
+#rodape {
+    margin-top: 90px;
+    /*margin:0 auto; *//*Centraliza a div */
+    width:100%; /*Tamanho da div */
+    font-family: Comfortaa;     /* FAZER MODIFICAÇÃO*/
+    color: aliceblue;               /*FAZER MODIFICAÇÃO*/
+}
+
+.coluna {
+    display:inline; /*Evita o bug da margem duplicada*/
+    float:left; /*Flutuando à esquerda*/
+    width:33%;
+}
+
+footer{
+    width: 100%; 
+    float: left; 
+    padding: 2% 3%; 
+    margin-top: 100px; 
+background: url(../img/Cafe-Footer.png) no-repeat center;
+      -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center; 
+    cursor: pointer; 
+    position: absolute;
+}
+
+footer a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.form-group button{
+
+
+    background:#6b3725;
+    color: bisque;
+    font-family: Comfortaa;
+    font-size:14px;
+    width:160px;
+    height:50px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .2);
+    Margin: 150px 146px 10px ;
+    padding: 5px;
+
+
+}
+
+.form-group input{
+
+    border: none;
+    border-bottom-color: dimgrey;
+    border-bottom: solid 1px #DDDDDD;
+
+}
+
+ #diminuir{
+    height: 200px;
+    width: 200px;
+}
+
+
+/*TELA CLIENTE*/
+
+
+#esquerda{
+    position: relative;
+    top:160px;
+    left:60px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  
+}
+#centro{
+    position: relative;
+    top:-300px;
+    left: 400px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    
+}
+
+#direita{
+    position: relative;
+    top:-395px;
+    left: 740px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.home-section{
+    height: 100vh;
+    width: 100%;
+    font-family: Comfortaa;
+
+}
+
+.busca form{
+    width: 45%; 
+    float: left; 
+    margin-top: 30px;
+
+}
+
+.nav-bar{
+    width: 100%;
+    height: 30%;
+}
+
+.nav-bar ul{
+    list-style: none;
+    float: right;
+    width: 20%;
+    margin-top: 10px;
+   display: inline-block;
+
+}
+
+.nav-bar ul li{
+    display: inline-block;
+    
+
+}
+
+.nav-bar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    line-height: 5px;
+    padding: 10;
+
+}
+
+.busca input[type=text]{
+    font-family: Comfortaa;
+    color: #fff;
+    width: 0;
+    margin-top: 20px;
+    margin-left: 50px;
+
+    box-sizing: border-box;
+    border: none;
+
+    font-size: 15px;
+    background-color: #fff;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    padding: 10px 20px 10px 40px;
+    transition: width 1s ease-in-out;  
+
+
+
+}
+
+.busca input[type=text]:focus{
+    width: 40%;
+    margin-left: 50px;
+    margin-top: 20px;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+
+}
+
+::-webkit-input-placeholder{
+    color: #fff;
+}
+
+li .notification{
+    margin-top: 20px;
+
+}
+
+.notification:hover{
+    width: 250px;
+    height: 50px;
+
+    background: #fff;
+    border-radius: 25px;
+
+    text-align: left;
+    padding: 0 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+
+
+
+}
+
+.usuario{
+
+    color: aliceblue;
+
+}
+
+li .num{
+
+    float: right;
+    margin-left:-10px;
+
+    border-radius: 50%;
+    padding: 1px 8px 1px 8px;
+    background: #4CAF50;
+    color:#8d3d07;
+
+    font-family: Comfortaa;
+
+}
+
+num{
+    text-align: center;
+
+
+}
+
+#fancy {
+  width: 70%;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 0; 
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+#link {
+    
+
+text-decoration:none; 
+color: white;
+}
+
+#link:hover{
+    color: burlywood;
+}
+
+
+#titulo{
+  
+    font-family: Comfortaa;
+    font-size: 16px;
+    color:#7d2709;    
+    
+}
+
+#texto{
+  font-family: Comfortaa;
+    font-size: 14px;
+    color:#7d2709;
+    padding-top:10px ;
+    padding-bottom:20px ;
+    padding-left: 20%;
+    padding-right: 20%;
+    
+}
+
+#linha1{
+    height: 2px; 
+    width: 29%; 
+    border: none; 
+    background-color:forestgreen;
+    
+}
+
+
+#linha3{
+    height: 2px; 
+    width: 40%; 
+    border: none; 
+    background-color:#d6e1c0;
+    
+}
+
+#linha2{
+    height: 2px; 
+    width: 15%; 
+    border: none; 
+    background-color:rgb(176,125,87);
+    
+}
+
+#gif{
+    margin-left: 28%;
+    position:fixed;
+    top: 15%;
+}
+
+
+
+ .bg_video {
+            position: relative;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            z-index: 1;
+
+
+        }
+
+        header {
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        #c body>ul {
+            position: absolute;
+            
+            width: 800px;
+            height: 200px;
+            left: 50%;
+            margin-left: -400px;
+            margin-top: -130px;
+        }
+
+       #car ul>li {
+            width: 25%;
+            list-style-type: none;
+            position: absolute;
+            
+            padding: 20px;
+            height: 200px;
+            opacity: 0;
+            padding-top: 40px;
+            text-align: center;
+            transition: 1s opacity;
+        }
+
+       #c .active {
+            opacity: 1;
+        }
+
+        #c p {
+            font-family: Comfortaa;
+            font-size: 15px;
+            font-weight: bold;
+            color:#840705;
+            line-height: 1.5em;
+        }
+
+       #c strong {
+            color: currentColor;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 100px;
+        }
+        
+        #c{
+            box-sizing: border-box;
+        }
+#c  li{
+    background-color: transparent;
+}
+
+#semNoti{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Comfortaa;
+    
+}
+
+
+
+
+
+@media screen and (max-width:574px){
+    
+      #diminuir {
+    height: 75px;
+    width: 75px;
+}
+    
+    
+     #not{
+        width: 25px;
+        height: auto;
+        
+    }
+    
+    #usu{
+        
+        width: 35px;
+        height: auto;
+    }
+     
+    .dropdown{
+        margin-top: 5px;
+      
+        
+    }
+    
+    #semNoti{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Comfortaa;
+    
+}
+    
+    #gif{
+    margin-left: 28%;
+    position:fixed;
+    top: 35%;
+}
+    
+#coracao{
+    display: none;
+}
+   
+     .nav-bar ul{
+    list-style: none;
+    float: right;
+    width: 50%;
+    margin-top: 0;
+   
+
+}  
+    
+    .sumir #linha2{
+  display: none;
+    
+}
+
+    #backfoto{
+    
+        height: 580px;
+        
+    }
+    
+    .letra{
+    position: absolute;
+    font-family: Comfortaa;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    color:white;
+    padding-top:10px;
+    padding-bottom:20px;
+     line-height: 50px;
+   
+    z-index: 2;
+    
+    
+}
+   
+    
+    #rodape{
+        margin-top: -100px;
+        
+    }
+    
+    
+    
+    
+
+}
+
+@media screen and (max-width:997px){
+ .nav-bar ul{
+    list-style: none;
+    float: right;
+    width: 50%;
+    margin-top: 0;
+   
+
+}    
+    
+    .sumir{
+   display: none;
+    }
+    
+#linha1{
+    height: 2px; 
+    width: 90%; 
+    border: none; 
+    background-color:rgb(176,125,87);
+    
+}    
+    
+#titulo{
+  
+    font-family: Comfortaa;
+    font-size: 15px;
+    color:#7d2709;    
+    
+}
+
+#texto{
+  font-family: Comfortaa;
+    font-size: 14px;
+    color:#7d2709;
+    padding-top:10px ;
+    padding-bottom:20px ;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+}    
+    
+#fancy {
+  width: 95%;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 0; 
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+    
+    
+        
+    .nav-bar{
+          width: 100%;
+          height: 50px;
+    } 
+    
+    .busca input[type=text]{
+    font-family: Comfortaa;
+    color: #fff;
+    width: 0;
+    margin-top: 8px;
+    margin-left: 50px;
+
+    box-sizing: border-box;
+    border: none;
+
+    font-size: 15px;
+    background-color: #fff;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    padding: 10px 20px 10px 40px;
+    transition: width 1s ease-in-out;  
+
+
+
+}
+
+.busca input[type=text]:focus{
+    width: 40%;
+    margin-left: 50px;
+    margin-top: 8px;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+
+}
+    
+}
+

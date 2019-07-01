@@ -1,0 +1,598 @@
+/*
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/05/2019, 21:05:22
+    Author     : adriano
+*/
+
+.registerbtn {
+  background-color: #8d3d07;
+  color: white;
+  padding: 28px 75px 40px ;
+  border: none;
+  cursor: pointer;
+
+  
+
+}
+
+ 
+#btn{
+    
+    
+    font-family: Comfortaa;
+    position: relative;
+    top: 450px;
+    font-family: Comfortaa;
+    
+    height: 29px;
+    border-radius: 25px;
+
+    
+}
+
+a{
+    color:aqua;
+}
+p{
+    margin-left: auto;
+}
+
+/*Estilo de Letra*/
+@font-face{
+
+    font-family: Comfortaa;
+    src:url(../letra/ComfortaaRegular.ttf);
+}
+
+.alert_list {
+  font-size: 11px;
+  color: grey;
+}
+li.alert_li {
+  font-size: 11px;
+  color: grey;
+  border-bottom: thin solid #c0c0c0;
+  list-style-type: none;
+    
+}
+li.alert_li:hover {
+  background-color: #eee;
+}
+.turn_off_alert {
+  float: right;
+  margin-bottom: 1px;
+}
+a.alert_message {
+  color: grey;
+}
+a.alert_message:hover {
+  color: grey;
+}
+
+.unstyled{
+    padding: 0;
+}
+
+
+li .notification{
+    margin-top: 20px;
+
+}
+
+.notification:hover{
+    width: 250px;
+    height: 50px;
+
+    background: #fff;
+    border-radius: 25px;
+
+    text-align: left;
+    padding: 0 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+
+
+
+}
+
+
+/*CORPO*/
+.corpo{
+    font-family: Comfortaa;
+    color: #6b3725;
+}
+
+
+/* Imagens*/
+
+#fundo{
+    background: url(../img/clienteTela.png) no-repeat center center fixed;
+
+    margin-top: -24px;
+    padding-top: 900px;
+    padding-bottom: 200px;
+
+
+
+    background-attachment: inherit;
+    background-position: center center;
+    min-height: 650px;
+    width: 100%;
+
+    max-height:650px ;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+
+}
+
+
+/*rodapé*/
+
+#rodape {
+    margin-top: 90px;
+    /*margin:0 auto; *//*Centraliza a div */
+    width:100%; /*Tamanho da div */
+    font-family: Comfortaa;     /* FAZER MODIFICAÇÃO*/
+    color: aliceblue;               /*FAZER MODIFICAÇÃO*/
+}
+
+.coluna {
+    display:inline; /*Evita o bug da margem duplicada*/
+    float:left; /*Flutuando à esquerda*/
+    width:33%;
+}
+
+footer{
+    width: 100%; 
+    float: left; 
+    padding: 2% 3%; 
+    margin-top: 100px; 
+    background-color: rgb(176,125,87); 
+    border: 1px solid rgb(176,125,87);
+    text-align: center; 
+    cursor: pointer; 
+    position: absolute;
+}
+
+footer a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.form-group button{
+
+
+    background:#6b3725;
+    color: bisque;
+    font-family: Comfortaa;
+    font-size:14px;
+    width:160px;
+    height:50px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .2);
+    Margin: 150px 146px 10px ;
+    padding: 5px;
+
+
+}
+
+.form-group input{
+
+    border: none;
+    border-bottom-color: dimgrey;
+    border-bottom: solid 1px #DDDDDD;
+}
+
+
+/*TELA CLIENTE*/
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.home-section{
+    height: 100vh;
+    width: 100%;
+    font-family: Comfortaa;
+
+}
+
+.busca form{
+    width: 45%; 
+    float: left; 
+    margin-top: 30px;
+
+}
+
+.nav-bar{
+    width: 100%;
+    height: 80px;
+}
+
+.nav-bar ul{
+    list-style: none;
+    float: right;
+    width: 28%;
+    margin-top: 10px;
+   
+
+}
+
+.nav-bar ul li{
+    display: inline-block;
+    padding: 1px 10px ;
+
+}
+
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 5px;
+    padding: 0;
+
+}
+
+.busca input[type=text]{
+    font-family: Comfortaa;
+    color: #fff;
+    width: 0;
+    margin-top: 20px;
+    margin-left: 50px;
+
+    box-sizing: border-box;
+    border: none;
+
+    font-size: 15px;
+    background-color: #fff;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    padding: 10px 20px 10px 40px;
+    transition: width 1s ease-in-out;  
+
+
+
+}
+
+.busca input[type=text]:focus{
+    width: 40%;
+    margin-left: 50px;
+    margin-top: 20px;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+
+}
+
+::-webkit-input-placeholder{
+    color: #fff;
+}
+
+li .notification{
+    margin-top: 20px;
+
+}
+
+.notification:hover{
+    width: 250px;
+    height: 50px;
+
+    background: #fff;
+    border-radius: 25px;
+
+    text-align: left;
+    padding: 0 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+
+
+
+}
+
+
+
+/*ESTILO MODAL LOGIN*/
+.modal-login {
+    width: 350px;
+
+}
+.modal-login .modal-content {
+    padding: 30px;
+    border-radius: 40px;
+    border: none;
+}
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+}
+.modal-login .form-control, .modal-login .btn {
+    min-height: 40px;
+    border-radius: 1px; 
+}
+.modal-login .hint-text {
+    text-align: center;
+    padding-top: 10px;
+}
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-login .btn {
+    background: #3498db;
+    border: none;
+    line-height: normal;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+    background: #248bd0;
+}
+.modal-login .hint-text a {
+    color: #999;
+}
+
+
+.send {
+  background: none;
+  color: white;
+  border: 1px solid #8d3d07;
+  border-radius: 70px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color:#8d3d07; 
+  outline: none;
+  padding: 15px 100px;   
+  transition: padding 500ms ease-in-out;
+  box-shadow: 0 0 0 0 rgba(181, 114, 38, 0.2);
+   transition: background, padding 500ms ease-in-out;
+    
+}
+
+.send:hover{
+  background: #8d3d07;
+    color:white;
+    transition: 0.5s;
+    
+}
+.send.is-success {
+  background: #8d3d07;
+  padding: 15px 17px}
+
+.is-success span {
+  display: none;
+}
+
+svg {
+  width: 0;
+  height: 0;
+}
+
+.is-success svg {
+  height: 30px;
+  width: 30px;
+}
+
+.send.is-loading {
+  padding: 15px 30px;
+  animation: pulse 1.5s infinite;
+}
+
+.is-loading span {
+  display: none;
+}
+
+.check {
+  stroke-dasharray: 130px 130px;
+  stroke-dashoffset: 130px;
+  transition: stroke-dashoffset 500ms ease-in-out;
+}
+
+.is-success .check {
+  stroke-dashoffset : 0px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(181, 114, 38, 0.2);
+  }
+  100% {
+    transform: scale(.9);
+    box-shadow: 0 0 0 0 rgba(181, 114, 38, 0.2);
+  }
+}
+
+
+
+
+.usuario{
+
+    color: aliceblue;
+
+}
+
+li .num{
+
+    float: right;
+    margin-left:-10px;
+
+    border-radius: 50%;
+    padding: 1px 8px 1px 8px;
+    background: #4CAF50;
+    color:#8d3d07;
+
+    font-family: Comfortaa;
+
+}
+
+num{
+    text-align: center;
+
+
+}
+
+#fancy {
+  width: 70%;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 0; 
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+#titulo{
+  
+    font-family: Comfortaa;
+    font-size: 16px;
+    color:#7d2709;    
+    
+}
+
+#texto{
+  font-family: Comfortaa;
+    font-size: 14px;
+    color:#7d2709;
+    padding-top:10px ;
+    padding-bottom:20px ;
+    padding-left: 20%;
+    padding-right: 20%;
+    
+}
+
+#linha1{
+    height: 2px; 
+    width: 15%; 
+    border: none; 
+    background-color:rgb(176,125,87);
+    
+}
+
+#gif{
+    margin-left: 28%;
+    position:fixed;
+    top: 15%;
+}
+
+
+@media screen and (max-width:574px){
+    
+    #gif{
+    margin-left: 28%;
+    position:fixed;
+    top: 35%;
+}
+}
+
+@media screen and (max-width:997px){
+   .nav-bar ul{
+    list-style: none;
+    float: right;
+    width: 100%;
+    margin-top: 0;
+   
+
+}
+    
+#linha1{
+    height: 2px; 
+    width: 30%; 
+    border: none; 
+    background-color:rgb(176,125,87);
+    
+}    
+    
+#titulo{
+  
+    font-family: Comfortaa;
+    font-size: 15px;
+    color:#7d2709;    
+    
+}
+
+#texto{
+  font-family: Comfortaa;
+    font-size: 14px;
+    color:#7d2709;
+    padding-top:10px ;
+    padding-bottom:20px ;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+}    
+    
+#fancy {
+  width: 95%;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 0; 
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+    
+    .nav-bar{
+          width: 100%;
+          height: 50px;
+    } 
+    
+    .busca input[type=text]{
+    font-family: Comfortaa;
+    color: #fff;
+    width: 0;
+    margin-top: 8px;
+    margin-left: 50px;
+
+    box-sizing: border-box;
+    border: none;
+
+    font-size: 15px;
+    background-color: #fff;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    padding: 10px 20px 10px 40px;
+    transition: width 1s ease-in-out;  
+
+
+
+}
+
+.busca input[type=text]:focus{
+    width: 40%;
+    margin-left: 50px;
+    margin-top: 8px;
+    background: url(../img/icons8-pesquisar-30.png)no-repeat right;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+
+}
+    
+}
+

@@ -1,0 +1,738 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08/05/2019, 14:28:16
+    Author     : Aluno
+*/
+
+
+/*LOADER!!*/
+
+
+
+/*NOVO*/
+/*Estilo de Letra*/
+@font-face {
+
+    font-family: Comfortaa;
+    src: url(../letra/ComfortaaRegular.ttf);
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Comfortaa, Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+#btnPes {
+    height: 50px;
+    width: 50px;
+    background: url(../img/icons8-pesquisar-30.png) center no-repeat;
+    border: none;
+    position: absolute;
+    top: 100px;
+    left: 170px;
+    z-index: 200;
+    cursor: pointer;
+}
+
+
+
+#fundo-marrom {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/fundo%20marrom.png) 0 0 no-repeat;
+    z-index: 2;
+
+}
+
+#logo-coffe {
+    position: relative;
+    z-index: 3;
+
+}
+
+#logo p {
+    font-size: 15px;
+    color: burlywood;
+
+}
+
+#bt-1 {
+
+    position: absolute;
+    font-size: 20px;
+    bottom: 700px;
+    right: 200px;
+    /* padding-top: 10px; */
+    padding-left: 69px;
+    padding-right: 69px;
+    padding-bottom: 10px;
+
+}
+
+#bt-2 {
+    position: absolute;
+    font-size: 20px;
+    bottom: 700px;
+    right: 200px;
+    /* padding-top: 10px; */
+    padding-left: 69px;
+    padding-right: 69px;
+    padding-bottom: 10px;
+}
+
+
+#linha3 {
+    height: 2px;
+    width: 40%;
+    border: none;
+    background-color: #d6e1c0;
+
+}
+
+#emp {
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #573616;
+    color: #840705;
+    padding: 15px;
+}
+
+#emp:hover {
+    background-color: #573616;
+    color: white;
+}
+
+
+
+#nav_inicial {
+    background-color: #573616;
+    height: 70px;
+}
+
+.titulo1 {
+    background-color: transparent;
+    border: 1px solid #573616;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #840705;
+    padding: 10px;
+    padding-right: 50px;
+}
+
+.titulo2 {
+    background-color: transparent;
+    border: 1px solid #573616;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #840705;
+    padding: 10px;
+    padding-right: 50px;
+
+}
+
+#textob {
+    font-size: 18px;
+    color: #573616;
+    padding: 20px;
+    line-height: 30px;
+
+
+}
+
+#box1 {
+    display: block;
+    width: 70%;
+    padding: 50px;
+    border: 50px;
+
+    font-family: Comfortaa;
+
+}
+
+/*LINHAS*/
+
+
+#linha1 {
+    height: 2px;
+    width: 50%;
+    border: none;
+    background-color: rgb(176, 125, 87);
+
+}
+
+
+
+
+
+
+
+
+
+
+.pesquisa input {
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    padding-left: 50px;
+    width: 65%;
+    position: absolute;
+    top: 100px;
+    left: 160px;
+    background: none;
+    z-index: 3;
+
+    cursor: pointer;
+}
+
+
+.pesquisa button:focus {
+    outline: none;
+}
+
+/* esconde o LABEL "Buscar" */
+.pesquisa label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+
+}
+
+a {
+    color: aqua;
+}
+
+p {
+    margin-left: auto;
+}
+
+/*Barra de Pesquisa*/
+
+
+/*Estilo de Letra*/
+@font-face {
+
+    font-family: Comfortaa;
+    src: url(../letra/ComfortaaRegular.ttf);
+}
+
+/*Fotos da Equipe*/
+.perfil {
+
+
+
+    text-decoration: overline;
+    text-decoration-color: rgb(176, 125, 87);
+
+    color: burlywood;
+
+}
+
+/*CORPO*/
+.corpo {
+    font-family: Comfortaa;
+    color: #6b3725;
+
+}
+
+#corpo1 {
+    text-align: justify;
+    font-family: Comfortaa;
+    font-size: 20px;
+    color: darkgray;
+
+}
+
+#corpo2 {
+
+    text-align: center;
+    font-family: Comfortaa;
+    color: #5b1a04;
+
+
+
+
+}
+
+#corpo3 {
+
+    text-align: center;
+    font-family: Comfortaa;
+
+
+}
+
+/*Caixa de Texto*/
+#box1 {}
+
+#box2 {
+
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    border: 5px solid white;
+    position: absolute;
+}
+
+/*Estilo de Título*/
+.titulo {
+    font-family: Comfortaa;
+    font-size: 25px;
+    color: #7d2709;
+}
+
+
+#titulo {
+
+    font-family: Comfortaa;
+    font-size: 16px;
+    color: #7d2709;
+
+}
+
+.titulo3 {
+    font-size: 20px;
+    font-family: Comfortaa;
+
+
+}
+
+#corpo2 p {
+    font-size: 15px;
+
+}
+
+
+/*BOTÃO*/
+.botao1 {
+    text-align: right;
+    font-family: Comfortaa;
+    color: chocolate;
+}
+
+/*Botão de Pesquisa*/
+
+/* Imagens*/
+
+#fundo {
+    background: url(../img/clienteTela.png) no-repeat center center fixed;
+
+    margin-top: -24px;
+    padding-top: 900px;
+    padding-bottom: 200px;
+
+
+
+    background-attachment: inherit;
+    background-position: center center;
+    min-height: 650px;
+    width: 100%;
+
+    max-height: 650px;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+
+}
+
+#cabeçalho {
+    background: url(../img/BgPh.png) no-repeat center fixed;
+
+    margin-top: -70px;
+    padding-top: 180px;
+
+
+    background-attachment: relative;
+    background-position: center center;
+    top: 0px;
+
+    width: 100%;
+    min-height: 972px;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: Comfortaa;
+    /* FAZER MODIFICAÇÃO*/
+    color: aliceblue;
+    z-index: 1;
+
+}
+
+
+
+/*EFEITOS*/
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+}
+
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+
+.aparecer{
+     position: relative;
+    -webkit-animation-name: aparece;
+    -webkit-animation-duration: 3s;
+    animation-name: aparece;
+    animation-duration: 3s;
+    
+}
+
+@-webkit-keyframes aparece{
+    from {
+        
+        opacity: 0
+    }
+
+    to {
+     
+        opacity: 1
+    }
+}
+
+@keyframes aparece{
+    from {
+        
+        opacity: 0
+    }
+
+    to {
+       
+        opacity: 1
+    }
+}
+
+
+
+
+
+
+/*rodapé*/
+
+#rodape {
+    margin-top: 90px;
+    /*margin:0 auto; */
+    /*Centraliza a div */
+    width: 100%;
+    /*Tamanho da div */
+    font-family: Comfortaa;
+    /* FAZER MODIFICAÇÃO*/
+    color: aliceblue;
+    /*FAZER MODIFICAÇÃO*/
+}
+
+.coluna {
+    display: inline;
+    /*Evita o bug da margem duplicada*/
+    float: left;
+    /*Flutuando à esquerda*/
+    width: 33%;
+}
+
+footer {
+    width: 100%;
+    float: left;
+    padding: 2% 3%;
+    margin-top: 100px;
+    background: url(../img/Cafe-Footer.png) no-repeat center;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+footer a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#tx {
+
+    font-family: Comfortaa;
+    font-size: 38px;
+    line-height: 50px;
+
+}
+
+#btn-p{
+    
+    padding: 15px;
+}
+
+#link {
+    
+
+text-decoration:none; 
+color: white;
+}
+
+#link:hover{
+    color: burlywood;
+}
+
+#tx-1 {
+    letter-spacing: 4px;
+    line-height: 65px;
+}
+
+#twitter:hover {
+    color: #54abed;
+}
+
+#instagram:hover {
+/*    color: deeppink;*/
+     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+          /* Also define standard property for compatibility */
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#facebook:hover {
+    color: #1877f2;
+}
+
+#facebook {
+    font-size: 90px;
+    color: dimgray;
+    
+   
+}
+
+
+#instagram {
+    font-size: 90px;
+    color: dimgray;
+   
+   
+}
+
+#twitter {
+    font-size: 90px;
+    color: dimgray ;
+   
+}
+
+#nav-inicial{
+    background-color: transparent
+}
+
+
+
+
+/*ESTILO MODAL LOGIN*/
+.modal-login {
+    width: 350px;
+
+}
+
+.modal-login .modal-content {
+    padding: 30px;
+    border-radius: 40px;
+    border: none;
+}
+
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+}
+
+.modal-login .form-control,
+.modal-login .btn {
+    min-height: 40px;
+    border-radius: 1px;
+}
+
+.modal-login .hint-text {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.modal-login .btn {
+    background: #3498db;
+    border: none;
+    line-height: normal;
+}
+
+.modal-login .btn:hover,
+.modal-login .btn:focus {
+    background: #248bd0;
+}
+
+.modal-login .hint-text a {
+    color: #999;
+}
+
+.form-group button {
+
+    position: relative;
+    top: 170px;
+    background: transparent;
+    color: #6b3725;
+    font-family: Comfortaa;
+    font-size: 15px;
+    font-weight: 600;
+    width: 170px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid #6b3725;
+    border-radius: 25px;
+    transition: 0.5s;
+
+}
+
+.form-group button:hover {
+    background: #6b3725;
+    color: white;
+    transition: 0.5s;
+
+}
+
+.form-group input {
+
+    border: none;
+    border-bottom-color: dimgrey;
+    border-bottom: solid 1px #DDDDDD;
+}
+
+#gif {
+    margin-left: 28%;
+    position: fixed;
+    top: 15%;
+}
+
+
+@media screen and (max-width:574px) {
+
+    #nav-inicial{
+         background-color:#50351f;
+        
+    }
+    
+    .a{
+        display: flex;
+      justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    
+    #gif {
+        margin-left: 28%;
+        position: fixed;
+        top: 35%;
+    }
+
+    .pesquisa input {
+        height: 50px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        outline: none;
+        padding-left: 50px;
+        width: 65%;
+        position: absolute;
+        top: 100px;
+        left: 90px;
+        background: none;
+        z-index: 3;
+
+        cursor: pointer;
+    }
+
+    #btnPes {
+        height: 50px;
+        width: 50px;
+        background: url(../img/icons8-pesquisar-30.png) center no-repeat;
+        border: none;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        z-index: 200;
+        cursor: pointer;
+    }
+
+
+
+
+
+}

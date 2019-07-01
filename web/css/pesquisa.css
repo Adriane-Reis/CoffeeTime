@@ -1,0 +1,279 @@
+@font-face {
+                    
+                font-family: Comfortaa;
+                src: url(../letra/ComfortaaLight.ttf)
+                
+}   
+ 
+
+body{
+    font-family: Comfortaa;  
+}
+
+#fundo{
+    background: url(../img/papel_coffe.png);
+     position: fixed;
+    width: 100%;
+    height:100%;
+ 
+    position: fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#bege{
+    background-color: #cea47b;
+    
+    height: 400px;
+}
+
+#marrom{
+    background-color: #6b3725;
+
+    height: 700px;
+}
+div #bege img{
+    margin-top: 130px;
+}
+.busca form{
+  
+
+    margin-top: 30px;
+}
+.busca input[type=text]{
+    width: 50%;
+    color: #fff;
+    margin-top: 60px;
+    margin-left: 50px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    font-size: 20px;
+    background-color: #fff;
+    background: url(../img/icons8-pesquisar-filled-50.png)no-repeat right;
+    padding: 20px 40px 20px 50px;
+    transition: width 1s ease-in-out;  
+}
+::-webkit-input-placeholder{
+    color: #6b3725;
+    font-weight: 600;
+}
+
+#c{
+    position: absolute;
+    top:17px;
+    left: 80%;
+    
+}
+#caixa{
+    padding: 10px;
+    border: 1px solid aliceblue;
+    border-radius: 50px;
+    width: 80%;
+    height: 70px;
+    text-align: left;
+    font-family: Comfortaa;
+    color: aliceblue;
+       
+    
+}
+
+#caixa img{
+    margin-left: 30px;
+    
+}
+#meio{
+    margin-top: 13px;
+    margin-left: 100px;
+    
+}
+
+#especialidade{
+    margin-top: -24px;
+    margin-left: 200px;
+    width:0%; 
+    
+}
+
+
+#favorito button{
+   margin-top: -24px;
+    margin-left: 400px;  
+    width: 50px;
+    height: 50px;
+     background: url(../img/coracao-vazio.png)no-repeat right;
+}
+
+#favorito button:checked{
+   margin-top: -24px;
+    margin-left: 400px;  
+     background: url(../img/coaracao-preenchido.png)no-repeat right;
+}
+
+#favorito{
+    margin-top: -24px;
+    margin-left: 400px;
+    background: url(../img/coracao-vazio.png)no-repeat right;
+   
+    
+}
+
+
+/*NAVBAR*/
+
+/*NAVBAR*/
+
+
+#p{
+    
+    color: white;
+}
+
+
+
+.to-be-changed {
+	transition: all 0s 9999999s;
+}
+
+span:active ~ .to-be-changed {
+	transition: all 0s;
+	color: red;
+}
+
+
+.emp{
+    color: white;
+    
+}
+
+.emp:hover{
+ 
+    color: maroon;
+}
+
+/*EFEITOS*/
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+}
+
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+
+.aparecer{
+     position: relative;
+    -webkit-animation-name: aparece;
+    -webkit-animation-duration: 2s;
+    animation-name: aparece;
+    animation-duration: 2s;
+    
+}
+
+@-webkit-keyframes aparece{
+    from {
+        
+        opacity: 0
+    }
+
+    to {
+     
+        opacity: 1
+    }
+}
+
+@keyframes aparece{
+    from {
+        
+        opacity: 0
+    }
+
+    to {
+       
+        opacity: 1
+    }
+}
+
+#gif {
+    margin-left: 28%;
+    position: fixed;
+    top: 15%;
+}
+
+.posicao{
+position: relative;
+top: 550px;
+}
+
+@media screen and (max-width:1010px){
+    
+    ::-webkit-input-placeholder{
+    color: transparent;
+}
+    
+}
+
+
+@media screen and (max-width:576px){
+    
+    #bege{
+    background-color: #cea47b;
+    
+    height: 250px;
+}
+    div #bege img{
+    margin-top: 50px;
+}
+    
+    .busca input[type=text]{
+         width: 80%;
+         margin-top: 30px;
+         font-size: 14px;
+         padding: 10px 20px 10px 40px;
+         background: url(../img/icons8-pesquisar-filled-30.png)no-repeat right;
+        }  
+    
+    ::-webkit-input-placeholder{
+    color: transparent;
+}
+    
+       #gif{
+    margin-left: 28%;
+    position:fixed;
+    top: 35%;
+}
+   
+    
+}

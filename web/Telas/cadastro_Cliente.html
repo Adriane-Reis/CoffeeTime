@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="../css/cadastro_Cliente.css">
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <title>Coffee Time - Encontre um organizador de café para seu evento! </title>
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+    <div class="bodysquare">
+        <img src="../img/coffeeTime_branco_solido.png" id="logo" width="410" height="210">
+        <div id="fundoexterno">
+
+            <div id="fundo">
+
+
+
+            </div>
+
+        </div>
+        <div>
+
+        </div>
+        <div class="w-100">
+
+            <form action="javascript: cadastrar();" id="formQ">
+                
+
+          
+                <div class="mainform mx-auto">
+                    
+                      <div class="alert alert-success" id="sucesso" align="center" style="display: none; margin-top:-20px">
+                <strong>Cadastro feito com sucesso!</strong>
+            </div>
+                    <h1 id="T1">Cadastre-se</h1>
+                    <p id="T2">Para estar apto a contratar empresas em nossa plataforma!</p>
+
+                    <br>
+                    <div class="text-center">
+                        <img width="150px" height="150px" src='../img/avatar1.png'  class="rounded-circle" name="fotoPerfil" id="fotoPerfil">
+                    <label class="pt-5" for='arquivo' style="width: 290px;">Adicionar foto de perfil</label>
+                        <input type="file" class="open" id="arquivo" accept="image/png, image/jpeg" name="arquivo">
+                    </div>
+                    
+                    
+                    <br>
+                    <br>
+                    
+                    
+                    <label id="l1" for="nome"><b>Nome</b></label>
+                    
+                    <br>
+                    <input id="nomeInput" type="text" placeholder="Nome completo" style="font-family : Comfortaa; font-size:8; " name="nome" required>
+
+                    <br>
+                    <br>
+
+                    <label id="l2" for="cpf"><b>Cpf</b></label>
+
+                    <br>
+
+                    <input id="cpfInput" type="text" pattern="[0-9]{11}" title="Coloque 11 digitos" placeholder="Digite seu cpf" style="font-family : Comfortaa; font-size:8; " name="cpf"  required>
+                    
+                   
+
+                    <br><br>
+
+                    <label id="li" for="email"><b>Email</b></label>
+
+                    <br>
+
+                    <input id="emailInput" type="text" placeholder="Digite seu email" style="font-family : Comfortaa; font-size:8; " name="email" required>
+
+                    <br>
+                    <br>
+
+                    <label id="l4" for="Senha"><b>Senha</b></label>
+
+                    <br>
+                    <input id="senhaInput" type="text" pattern="{6}" title="Coloque no mínimo 6 digitos" placeholder="Digite sua senha (Coloque no minimo 6 digitos)" style="font-family : Comfortaa; font-size:20; " minlength="6" name="senha" required>
+
+                    <br>
+                    <br>
+
+                    <p id="termos">Concordo com os <a href="#termo" class="trigger-btn" data-toggle="modal">Termos de Uso</a> e a <a href="#politica" class="trigger-btn" data-toggle="modal">Politica de Privacidade</a></p>
+                   
+
+                    <div class="text-center" style="margin-top: 20px; margin-bottom: -80px;">
+
+                        <!--<button id="btn" type="submit" style="font-family: Comfortaa" class="registerbtn">Cadastrar</button>-->
+                        <button id="send" class="send" type="submit">
+                            
+                            <svg viewBox="0 0 90.594 59.714">
+                                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                            </svg>
+                            <span>Cadastrar</span>
+                        </button>
+                        
+                         <br>
+                        <br>
+                    <p><a href="tela_login.html" style="font-size:13px; ">Já possui uma conta?</a></p>
+
+
+                        <script>
+                            const btn2 = document.getElementById('send');
+                            $('#formQ').submit(function(){
+                                btn2.classList.add('is-loading');
+
+                                // fake API call
+                                setTimeout(() => {
+                                    btn2.classList.add('is-success');
+                                    btn2.classList.remove('is-loading');
+                                }, 4000);
+                            })
+                        </script>
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- TERMOS -->
+    <div id="termo" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="termo-div" class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <h2 style="font-family: Comfortaa;color:#000000;font-size:16px;text-align: center;margin-top: 40px;margin-bottom: 40px; font-weight: bold;">Termos e Condições</h2>
+
+
+                <p>Por favor, leia com atenção os termos e condições.</p>
+                <p> Ao se cadastrar no coffeetime.com.br você ESTÁ DE ACORDO COM AS CONDIÇÕES E TERMOS do Website. Note que a recusa destes Termos do Website impedirá que você faça pedidos de serviços do nosso Website.</p>
+                <h6>1. SERVIÇOS OFERECIDOS</h6>
+                <p style="text-align: left">1.1 Este TERMO se aplica para regular o uso do serviço oferecido pelo coffeetime.com.br aos USUÁRIOS, qual seja, possibilitar a escolha, pelos USUÁRIOS, de EMPRESAS cadastradas e, via on-line, efetivar solicitações para aquisição de eventos relacionados a coffee breaks fornecidos pelas EMPRESAS, de acordo com o cardápio disponibilizado, sendo possível, igualmente, aos USUÁRIOS, a efetivação do pagamento ficando a cargo das EMPRESAS.</p>
+                <p style="text-align: left">1.2 O serviço do coffeetime.com.br consiste, portanto, em aproximar, através do nosso site, os USUÁRIOS e as EMPRESAS cadastradas, possibilitando que os USUÁRIOS encaminhem, as EMPRESAS, pedidos de coffee breaks.</p>
+                <p style="text-align: left">1.3 Desde logo fica esclarecido ao USUÁRIO - o qual se declara ciente - que o serviço oferecido pelo coffeetime.com.br se relaciona apenas à intermediação para comercialização de coffee breaks, não abarcando preparo, embalagem, disponibilização e entrega física (via automóvel ou outros meios) dos produtos, sendo esses quatro itens de responsabilidade integral da EMPRESA, a quem deverão ser direcionados quaisquer reclamos acerca de problemas decorrentes de vício, defeito ou inexecução da feitura, preparo e realização de eventos relacionados a café.</p>
+                <h6>2. CADASTRO</h6>
+                <p style="text-align: left">2.1 O USUÁRIO, para utilizar os serviços acima descritos, deverá ter capacidade jurídica para atos civis e deverá, necessariamente, prestar as informações exigidas no CADASTRO, assumindo integralmente a responsabilidade (inclusive civil e criminal) pela exatidão e veracidade das informações fornecidas no CADASTRO, que poderá ser verificado, a qualquer momento, pelo coffeetime.com.br.</p>
+                <p style="text-align: left">2.1.1 Em caso de informações incorretas, inverídicas ou não confirmadas, bem assim na hipótese da negativa em corrigi-las ou enviar documentação que comprove a correção, o CoffeeTime se reserva o direito de não concluir o cadastramento em curso ou, ainda, de bloquear o cadastro já existente, impedindo o USUÁRIO de utilizar os serviços on-line até que, a critério do coffeetime.com.br , a situação de anomalia esteja regularizada. O coffeetime.com.br se reserva o direito de impedir, a seu critério, novos CADASTROS, ou cancelar os já efetuados, em caso de ser detectada anomalia que, em sua análise, seja revestida de gravidade ou demonstre tentativa deliberada de burlar as regras aqui descritas, obrigatórias para todos os USUÁRIOS. Também agirá o coffeetime.com.br de tal forma caso verifique descumprimento, pelo USUÁRIO, de qualquer obrigação prevista no presente TERMO.</p>
+                <p style="text-align: left">2.2 Efetuado, com sucesso, o CADASTRO, o USUÁRIO terá acesso aos serviços por meio de login e senha, dados esses que se compromete a não divulgar a terceiros, ficando sob sua exclusiva responsabilidade qualquer solicitação de serviço que seja feita com o uso de login e senha de sua titularidade.</p>
+                <h6>3. OBRIGAÇÕES DO USUÁRIO</h6>
+                <p style="text-align: left">3.1 Efetuado com sucesso o CADASTRO do USUÁRIO, este se obriga a não divulgar a terceiros login e senha de acesso, nem permitir o uso de tais informações por terceiros, responsabilizando-se pelas consequências do uso de login e senha de sua titularidade.</p>
+                <p style="text-align: left">3.2 É obrigação do USUÁRIO fornecer informações cadastrais totalmente verídicas e exatas, responsabilizando-se exclusiva e integralmente (em todas as searas jurídicas) por todo o conteúdo por si informado no item CADASTRO, mantendo atualizado e confirmado o endereço para entrega dos produtos encomendados.</p>
+                <p style="text-align: left">3.3 O USUÁRIO se obriga, também, a pagar integralmente o preço dos eventos por si solicitados ou encomendados a EMPRESA e efetivamente a si entregues, diretamente ao portador dos produtos encomendados por meio da EMPRESA (dinheiro, cheque, tickets, etc.).</p>
+                <p style="text-align: left">3.4 O USUÁRIO que seja menor de 18 anos de idade está ciente de que não poderá encomendar e adquirir, em qualquer hipótese, produtos alcoólicos, responsabilizando-se pela correta informação de sua idade no item CADASTRO.</p>
+                <p style="text-align: left">3.5 O USUÁRIO concorda com o uso das informações de avaliações e feedbacks do serviços das EMPRESAS e do CoffeeTime.</p>
+                <h6>4. OBRIGAÇÕES DO coffeetime.com.br</h6>
+                <p style="text-align: left">4.1 Disponibilizar no site coffeetime.com.br espaço virtual que permita ao USUÁRIO devidamente cadastrado efetivar pedidos de coffee breaks anunciados e comercializados pelas EMPRESAS.</p>
+                <p style="text-align: left">4.2 Proteger, por meio de armazenamento em servidores ou quaisquer outros meios magnéticos de alta segurança, a confidencialidade de todas as informações e cadastros relativos aos USUÁRIOS, assim como valores atinentes às operações financeiras advindas da operacionalização dos serviços previstos no presente TERMO. Contudo, não responderá pela reparação de prejuízos que possam ser derivados de apreensão e cooptação de dados por parte de terceiros que, rompendo os sistemas de segurança, consigam acessar essas informações.</p>
+                <h6>5. MODIFICAÇÕES DESTE TERMO</h6>
+                <p style="text-align: left">5.1 O presente TERMO DE USO poderá, a qualquer tempo, ter seu conteúdo, ou parte dele, modificados para adequações e inserções, tudo com vistas ao aprimoramento dos serviços disponibilizados.</p>
+                <p style="text-align: left">5.2 As novas condições entrarão em vigência assim que sua veiculada no site, sendo possível ao USUÁRIO manifestar oposição a quaisquer dos termos modificados, desde que o faça por escrito, através do site coffeetime.com.br , o que gerará o cancelamento de seu CADASTRO.</p>
+                <h6>6. CANAL DE COMUNICAÇÃO</h6>
+                <p style="text-align: left">6.1 Para estabelecer contato entre coffeetime.com.br e o USUÁRIO fica disponibilizado o endereço eletrônico deste link, sendo certo que o USUÁRIO se obriga, igualmente, a manter em seu cadastro endereço eletrônico atual por intermédio do qual se farão as comunicações a ele dirigidas pelo coffeetime.com.br , desde logo emprestando-se validade jurídica e efetividade a esse meio eletrônico de troca de informações recíprocas.</p>
+                <h6>7. ACEITAÇÃO DO TERMO DE USO</h6>
+                <p style="text-align: left">7.1 O USUÁRIO declara ter lido, entendido e que aceita todas as regras, condições e obrigações estabelecidas no presente TERMO.</p>
+                <p>Última atualização: 03 de maio de 2019</p>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--POLÍTICA-->
+    <div id="politica" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="login-div" class="modal-content" style="height: 650px">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <h2 style="font-family: Comfortaa;color:#000000;font-size:16px;text-align: center;margin-top: 40px;margin-bottom: 40px; font-weight: bold;">Política de Privacidade</h2>
+                
+            
+                <p>Todas as suas informações pessoais recolhidas, serão usadas para o ajudar a tornar a sua visita no nosso site o mais produtiva e agradável possível.</p>
+                <p>A garantia da confidencialidade dos dados pessoais dos utilizadores do nosso site é importante para o CoffeeTime.</p>
+                <p style="text-align: left;">Todas as informações pessoais relativas a membros, assinantes, clientes ou visitantes que usem o CoffeeTime serão tratadas em concordância com a Lei da Proteção de Dados Pessoais de 26 de outubro de 1998 (Lei n.º 67/98).</p>
+                <p style="text-align: left;">A informação pessoal recolhida pode incluir o seu nome, e-mail, número de telefone e/ou telemóvel, morada, data de nascimento e/ou outros.</p>
+                <p style="text-align: left;">O uso do CoffeeTime pressupõe a aceitação deste Acordo de privacidade. A equipe do CoffeeTime reserva-se ao direito de alterar este acordo sem aviso prévio. Deste modo, recomendamos que consulte a nossa política de privacidade com regularidade de forma a estar sempre atualizado.</p>
+                <h6>1. OS ANÚNCIOS</h6>
+                <p style="text-align: left;">Tal como outros websites, coletamos e utilizamos informação contida nos anúncios. A informação contida nos anúncios, inclui o seu endereço IP (Internet Protocol), o seu ISP (Internet Service Provider, como o Sapo, Clix, ou outro), o browser que utilizou ao visitar o nosso website (como o Internet Explorer ou o Firefox), o tempo da sua visita e que páginas visitou dentro do nosso website.</p>
+                <h6>2. OS COOKIES E WEB BEACONS </h6>
+                <p style="text-align: left;">Utilizamos cookies para armazenar informação, tais como as suas preferências pessoas quando visita o nosso website. Isto poderá incluir um simples popup, ou uma ligação em vários serviços que providenciamos, tais como fóruns.</p>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+       
+    </script>
+
+ <script type="text/javascript">
+     $('#arquivo').hide();
+        function enviar_imagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#fotoPerfil').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#arquivo").change(function() {
+            enviar_imagem(this);
+        });
+    </script>
+    <!--Funcionalidade cadastrar cliente-->
+    <script>
+        function cadastrar() {
+
+
+            var nomeInput = document.getElementById('nomeInput');
+            var cpfInput = document.getElementById('cpfInput');
+            var emailInput = document.getElementById('emailInput');
+            var senhaInput = document.getElementById('senhaInput');
+            var btn = document.getElementById('send');
+
+            btn.addEventListener('click', function() {
+                cadastroCliente(nomeInput.value, cpfInput.value, emailInput.value, senhaInput.value);
+            });
+
+            function cadastroCliente(nome, cpf, email, senha) {
+                var data = {
+                    nome: nome,
+                    cpf: cpf,
+                    email: email,
+                    senha: senha
+
+                };
+                
+                 $('#sucesso').show(1000);
+                 
+                console.log("ata");
+                firebase.database().ref().child('Cliente').child(cpf).set(data);
+                
+                firebase.auth().createUserWithEmailAndPassword(data.email, data.senha).catch(function(error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.log(errorCode);
+                    console.log(errorMessage);
+                });
+            };
+
+
+        }
+    </script>
+    
+    
+    
+
+    
+ 
+    
+
+</body>
+    </html>

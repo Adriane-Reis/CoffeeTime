@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>CoffeeTime - Encontre uma empresa que trabalha com coffee break para seu evento!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/novo.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="js/real-time-database.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+</head>
+
+<body onload="myFunction()">
+
+    <div id="loader" class="h-100">
+
+        <img src="../img/coffee-bean-db.gif" width="40%" id="gif">
+
+    </div>
+    <div style="display:none;" id="myDiv">
+        <header>
+            <nav id="nav-inicial" class="navbar navbar-expand-md navbar-dark ">
+
+                <a class="navbar-brand" href="#"><img class="img-fluid ml-5 aparecer" src="../img/coffeeTime_nome_transparente.png" width="170"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <div class="container">
+                        <div id="tx" class="col-sm-12 d-flex justify-content-end a">
+
+
+                            <ul class="navbar-nav aparecer">
+
+                                <li class="nav-item">
+                                    <a href="#myModal" class="trigger-btn " data-toggle="modal">
+                                        <button type="button" class="btn btn-outline-light mr-2">Login</button>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="cadastro_Cliente.html">
+                                        <button type="button" class="btn btn-outline-light">Cadastro</button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+
+
+        </header>
+
+        <div id="cabeçalho" class="container-fluid d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div id="tx" class="col-sm-12 text-center mt-n5">
+                    <div id="tx-1" class="mt-n5 animate-bottom"> Encontre uma empresa<br> que trabalha com coffee break <br>para seu evento!</div>
+                    <br>
+                    <a href="cadastro_Cliente.html"><button id="btn-p" type="button" class="btn btn-outline-light btn-lg animate-bottom">Crie sua conta aqui</button></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <nav id="nav_inicial" class="navbar navbar-light">
+            <!-- Navbar content -->
+        </nav>
+
+        <div class="container-fluid mt-0 pt-0">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12 ml-5">
+                            <div class="px-3" id="box1">
+
+                                <h2 class="titulo1"> CoffeeTime? </h2>
+                                <p id="textob">O CoffeeTime é uma plataforma criada para
+                                    te ajudar a contratar uma empresa para o seu
+                                    evento de forma rápida e prática.</p>
+                                <img src="../img/TimerIcon.png" width="70" height="40">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ml-5">
+                            <div class="px-3" id="box1">
+
+                                <h2 class="titulo2">Como funciona?</h2>
+                                <p id="textob">Cadastrado em nosso site, você preenche um
+                                    formulário com as características do café que você deseja,
+                                    e a partir disso buscamos os profissionais que mais
+                                    se enquadram no seu estilo de evento.</p>
+                                <img class="" src="../img/helpIcon.png" width="79" height="50">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 ">
+                    <div class="mt-5 mb-5 " id="corpo2">
+
+                        <img class="mt-5 " src="../img/UnidadeIconeCoffeeTime.png" id="imgP" width="90" height="90">
+
+                        <p class=" mt-5" id="titulo" style="font-size:25px; text-align: center;line-height:40px;">Sua empresa trabalha com Coffee Breaks?</p>
+                        <hr id="linha3" />
+
+                        <p>Cadastre sua empresa pelo CoffeeTime e lucre com seus serviços</p>
+                        <p style="color:#00a4d3">agora pela nossa plataforma</p>
+
+                        <a href="cadastro_Empresa.html"> <button type="button" class="btn btn-secondary mb-5" id="emp">Cadastrar Empresa</button></a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-12 mb-5">
+                    <div id="corpo2 ">
+                        <p class="mt-5" id="titulo" style="font-size:25px; text-align: center;line-height:40px;">Siga-nos!</p>
+                        <hr id="linha3" class="mb-5" />
+                    </div>
+                    <div id="corpo3">
+                        <div class="row">
+                            <div class="col-4"><a href=""><i id="facebook" class="fab fa-facebook mb-5"></i></a></div>
+                            <div class="col-4"><a href="https://www.instagram.com/oicoffeetime"><i id="instagram" class="fab fa-instagram mb-5"></i></a></div>
+                            <div class="col-4"><a href="https://twitter.com/coffeetime2019"><i id="twitter" class="fab fa-twitter"></i></a></div>
+                        </div>
+
+
+
+
+                        <p class="mt-5" id="titulo" style="font-size:25px; text-align: center;line-height:40px;">Equipe CoffeeTime</p>
+                        <hr class="mb-5" id="linha3" />
+
+
+                        <figure class="figure" style="width:20%">
+                            <img src="../img/yanaredonda.jpg" class="figure-img img-fluid rounded" width="90" height="90">
+                            <figcaption class="figure-caption perfil" style="color: #840705">Yana Santos</figcaption>
+                        </figure>
+
+                        <figure class="figure" style="width:25%">
+                            <img src="../img/adrianeredonda.jpg" class="figure-img img-fluid rounded" width="90" height="90">
+                            <figcaption class="figure-caption perfil" style="color: #840705">Adriane Reis</figcaption>
+                        </figure>
+
+                        <figure class="figure" style="width:25%">
+                            <img src="../img/brunaredonda.jpg" class="figure-img img-fluid rounded" width="90" height="90">
+                            <figcaption class="figure-caption perfil" style="color: #840705">Bruna Simões</figcaption>
+                        </figure>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        <div class="container-fluid px-0" id="rodape" style="margin-top: -90px">
+            <footer>
+
+                <div class="coluna">
+                    <h3>Sobre o CoffeeTime</h3>
+
+                    <p><a id="link" href="#">Esclarecimentos da plataforma</a></p>
+                    <p><a id="link" href="#">Sobre o CoffeeTime</a></p>
+                    <p><a id="link" href="#">Fale Conosco</a></p>
+
+                </div>
+
+                <div class="coluna">
+                    <h3>Serviços</h3>
+
+                    <p><a id="link" href="#">Agradecimentos da Equipe</a></p>
+
+                </div>
+
+                <div class="coluna">
+                    <h3>Siga-nos</h3>
+
+                    <p><a id="link" href="#"><i class="fab fa-facebook mr-2"></i>Facebook</a></p>
+                    <p><a id="link" href="https://www.instagram.com/oicoffeetime"><i class="fab fa-instagram mr-2"></i>Instagram</a></p>
+                    <p><a id="link" href="https://twitter.com/coffeetime2019"><i class="fab fa-twitter mr-2"></i>Twitter</a></p>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+
+        <div class="modal-dialog modal-login">
+
+            <div class="alert alert-danger" id="erro" align="center" style="display: none">
+                <strong>Senha ou email incorreto!</strong>
+            </div>
+
+            <div class="alert alert-success" id="sucesso" align="center" style="display: none">
+                <strong>Login feito com êxito!</strong>
+            </div>
+            <div id="login-div" class="modal-content" style="height: 600px">
+
+                <form action="javascript: fazerLogin();" name="fLogin">
+
+
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+
+                    </div>
+                    <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                        Login</h2>
+                    <h5 style="font-family:Comfortaa ;color: #5b1a04;text-align: center;margin-bottom: 50px;margin-top: -20px; font-size: 15px;">
+                        Procurando uma Empresa? É uma Empresa? Acesse por aqui!</h5>
+
+
+
+                    <label style=" Width:80px;
+                               Margin: 5px 250px 10px 15px;
+                               font-size: 16px;
+                               color:#5b1a04;
+                               font-family: Comfortaa;">Email</label>
+                    <div class="form-group">
+                        <input type="Email" id="campoEmail" name="email" placeholder="Entre com o email cadastrado em nosso site." style="position: absolute;font-family: Comfortaa; font-size:15px; width:80%; height: 30px; top:279px; left: 45px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Senha" style="Width:80px;
+                                   Margin: 5px 250px 10px 15px;
+                                   font-size: 16px;
+                                   color:#5b1a04;
+                                   font-family: Comfortaa;
+                                   position: absolute;
+                                   top: 345px    ">Senha</label>
+
+                        <input type="password" id="campoSenha" name="algum" placeholder="Insira sua senha" style="position: absolute; top:360px; font-family: Comfortaa; font-size:15px; width:80%; height: 30px; left: 45px; top: 380px; ">
+                        <a id="butVisi"><img src="../img/icons8-visível-filled-20.png" style="position:absolute; top:387px; right:76px; "></a>
+                    </div>
+
+                    <div class="form-group" align="center">
+                        <button type="submit" id="butt">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+    <!--Funcionalidade login-->
+    <script>
+        var campoEmail = document.getElementById('campoEmail');
+        var campoSenha = document.getElementById('campoSenha');
+
+        function fazerLogin() {
+
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(campoEmail.value, campoSenha.value)
+                .then(function(result) {
+                    console.log(result);
+                    let emailsC = firebase.database().ref().child('Cliente').orderByChild('email').equalTo(campoEmail.value);
+                    let emailsE = firebase.database().ref().child('Empresa').orderByChild('email').equalTo(campoEmail.value);
+                    emailsC.once('child_added', function(snap) {
+                        emailC = snap.val().email;
+                        console.log('emailsC: ' + emailsC);
+                        if (emailsC != null) {
+                            window.location = 'tela_Cliente.html';
+                        }
+                    });
+                    emailsE.once('child_added', function(snap) {
+                        emailE = snap.val().email;
+                        console.log('emailsE: ' + emailsE);
+                        if (emailE != null) {
+                            window.location = 'tela_Empresa.html';
+                        }
+                    })
+
+                    $('#sucesso').show(1000);
+                    $('#erro').hide(1000);
+
+                })
+                .catch(function(error) {
+                    $('#erro').show(1000);
+                    $('#sucesso').hide(1000);
+                });
+        }
+    </script>
+
+    <script>
+        var campoSenha = document.getElementById('campoSenha');
+        var butVisi = document.getElementById('butVisi');
+
+        butVisi.addEventListener('click', function() {
+            if (campoSenha.getAttribute('type') == 'password')
+                campoSenha.setAttribute('type', 'text');
+            else
+                campoSenha.setAttribute('type', 'password');
+        })
+    </script>
+
+
+
+    <script>
+        var myVar;
+        var bodyx = document.getElementsByTagName("body")[0];
+
+        function myFunction() {
+            bodyx.style.backgroundColor = "#eeeeee";
+            myVar = setTimeout(showPage, 2900);
+
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+            bodyx.style.backgroundColor = "white";
+        }
+    </script>
+
+
+
+
+
+
+</body></html>

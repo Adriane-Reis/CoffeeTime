@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <title>Coffee Time - Encontre uma empresa que trabalha com coffee break para seu evento!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/pesquisa.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/real-time-database.js"></script>
+</head>
+
+<body onload="myFunction()">
+    
+     <div id="loader" class="h-100">
+
+        <img src="../img/coffee-bean-db.gif" width="40%" id="gif">
+         
+  
+
+    </div>
+    
+    <div  style="display:none;" id="myDiv">
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+            <div id="bege" class="col-sm-12 col-xs-30">
+
+                <img src="../img/icons8-caf%C3%A9-filled-100.png" class="mx-auto d-block animate-bottom">
+
+                <form action="">
+                    <div class="busca">
+
+                        <script>
+                            function executar() {
+                                var texto = document.getElementById('texto').value;
+                                var lista = document.getElementById('historico');
+                                var adicionar = true;
+                                var opt = document.createElement('option');
+
+                                for (i = 0; i < lista.options.length; i++) {
+                                    if (tx == lista.options[i].value) {
+                                        adicionar = false;
+                                    }
+                                }
+                                if (adicionar == true) {
+                                    opt.value = texto;
+                                    lista.appendChild(opt);
+                                }
+                            }
+                        </script>
+
+                        <input type="text" placeholder="Ache uma de nossas empresas cadastradas!" class="mx-auto d-block aparecer" list="historico" id="pesquisa">
+
+                        <datalist id="historico">
+
+                        </datalist>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div id="marrom" class="col-sm-12 ">
+                <br>
+                <br>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+   
+    <script>
+        var f = 0;
+
+        $('#c').click(function() {
+            if (f == 0) {
+                $('#c > img').attr('src', '../img/coaracao-preenchido.png');
+                f = 1;
+
+            } else {
+                $('#c > img').attr('src', '../img/coracao-vazio.png');
+                f = 0;
+            }
+
+
+        })
+        $('#botao2').click(function() {
+            $('#bege').attr('style', 'background-color: white;');
+
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#pesquisa").on("keyup", function() {
+                console.log('blz')
+                var value = $(this).val().toLowerCase();
+                $(".reis #caixa").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            firebase.database().ref('Empresa').on('child_added', function(snap) {
+                console.log('snap: ' + snap.key);
+                firebase.database().ref('Empresa/' + snap.key).on('value', function(snap) {
+                    console.log('snap: ' + snap.val().nome);
+                    let str = "<div class='col-sm-12 reis animate-bottom' align='center'>";
+                    str = str + "<div id='caixa' align='center' style='color:white;'><a href='#' class='emp'>" + snap.val().nome + "</a> | Especialidade:" + snap.val().especialidades + "</div><br> ";
+                    str = str + "</div";
+                    $('#marrom').append(str);
+                    $('.emp').click(function() {
+                        console.log('ara? '+$(this).text() );
+                        window.sessionStorage.setItem(`Empresa`, $(this).text());
+                        location.href = "tela_perfil.html";
+                    })
+                })
+            })
+
+        });
+    </script>
+    
+    <script>
+        var myVar;
+        var bodyx = document.getElementsByTagName("body")[0];
+
+        function myFunction() {
+            bodyx.style.backgroundColor = "#eeeeee";
+            myVar = setTimeout(showPage, 2900);
+
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+            bodyx.style.backgroundColor = "white";
+        }
+
+    </script>
+
+</body></html>
+

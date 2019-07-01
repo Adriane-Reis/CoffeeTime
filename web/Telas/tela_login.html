@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="../css/tela_login.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>Coffee Time - Encontre um organizador de café para seu evento! </title>
+
+
+</head>
+
+
+
+
+
+<body>
+    <div class="bodysquare">
+        <img src="../img/coffeeTime_branco_solido.png" id="logo" width="410" height="210">
+        <div id="fundoexterno">
+
+            <div id="fundo">
+
+
+
+            </div>
+
+        </div>
+        <div>
+
+        </div>
+        <div class="w-100">
+
+            <form action="javascript: fazerLogin();">
+                
+                 <div class="alert alert-danger" id="erro" align="center" style="display: none; z-index: 1000;">
+                <strong>Senha ou email incorreto!</strong>
+            </div>
+
+            <div class="alert alert-success" id="sucesso" align="center" style="display: none; z-index: 10000;">
+                <strong>Login feito com êxito!</strong>
+            </div>
+                <div class="mainform mx-auto">
+                    <h1 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-bottom: 40px">Login</h1>
+                    <p style="font-family:Comfortaa ;color: #5b1a04;text-align: center;margin-bottom: 50px;margin-top: -20px; font-size: 15px;"> Procurando uma Empresa? É uma Empresa? Acesse por aqui!</p>
+
+
+                    <label id="li" for="email"><b>Email</b></label>
+
+                    <br>
+
+                    <input id="campoEmail" type="text" placeholder="Insira seu email" style="font-family : Comfortaa; font-size:8; " name="email" required>
+
+                    <br>
+                    <br>
+
+                    <label id="l4" for="Senha"><b>Senha</b></label>
+
+                    <br>
+                    <input id="campoSenha" type="password" placeholder="Insira sua senha" style="font-family : Comfortaa; font-size:20; " name="senha" required>
+                    <a id="butVisi"><img src="../img/icons8-visível-filled-20.png" style="position:absolute; top:430px; right:110px; "></a>
+                    <br>
+                    <br>
+
+                    <div class="text-center" style="margin-top: 20px; margin-bottom: -80px;">
+
+                        <!--<button id="btn" type="submit" style="font-family: Comfortaa" class="registerbtn">Cadastrar</button>-->
+                        <button id="send" class="send" type="submit">
+
+                            <svg viewBox="0 0 90.594 59.714">
+                                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                            </svg>
+                            <span>Login</span>
+                        </button>
+
+
+                        <script>
+                            const btn2 = document.getElementById('send');
+
+                            btn2.addEventListener('click', () => {
+                                btn2.classList.add('is-loading');
+
+                                // fake API call
+                                setTimeout(() => {
+                                    btn2.classList.add('is-success');
+                                    btn2.classList.remove('is-loading');
+                                }, 4000);
+                            });
+
+                        </script>
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+
+    <!--Funcionalidade login-->
+    <script>
+        var campoEmail = document.getElementById('campoEmail');
+        var campoSenha = document.getElementById('campoSenha');
+
+        function fazerLogin() {
+
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(campoEmail.value, campoSenha.value)
+                .then(function(result) {
+                    console.log(result);
+                    let emailsC = firebase.database().ref().child('Cliente').orderByChild('email').equalTo(campoEmail.value);
+                    let emailsE = firebase.database().ref().child('Empresa').orderByChild('email').equalTo(campoEmail.value);
+                    emailsC.once('child_added', function(snap) {
+                        emailC = snap.val().email;
+                        console.log('emailsC: ' + emailsC);
+                        if (emailsC != null) {
+                            window.location = 'tela_Cliente.html';
+                        }
+                    });
+                    emailsE.once('child_added', function(snap) {
+                        emailE = snap.val().email;
+                        console.log('emailsE: ' + emailsE);
+                        if (emailE != null) {
+                            window.location = 'tela_Empresa.html';
+                        }
+                    })
+
+                    $('#sucesso').show(1000);
+                    $('#erro').hide(1000);
+
+                })
+                .catch(function(error) {
+                    
+                    $('#erro').show(1000);
+                    $('#sucesso').hide(1000);
+                });
+        }
+
+    </script>
+
+
+    <script>
+        var campoSenha = document.getElementById('campoSenha');
+        var butVisi = document.getElementById('butVisi');
+
+        butVisi.addEventListener('click', function() {
+            if (campoSenha.getAttribute('type') == 'password')
+                campoSenha.setAttribute('type', 'text');
+            else
+                campoSenha.setAttribute('type', 'password');
+        })
+
+    </script>
+
+
+
+
+</body>
+
+</html>

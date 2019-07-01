@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="../css/tela_AlterarDados_Cliente.css">
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>Coffee Time - Encontre um organizador de café para seu evento! </title>
+   
+
+</head>
+
+
+
+
+
+<body>
+    <div class="bodysquare">
+        <img src="../img/coffeeTime_branco_solido.png" id="logo" width="410px" height="210px">
+        <div id="fundoexterno">
+
+            <div id="fundo">
+
+
+
+            </div>
+
+        </div>
+        <div>
+
+        </div>
+        <div class="w-100">
+
+            <form action="javascript: alterarDados();">
+                <div class="mainform mx-auto">
+                    <h1 id="T1">Alterar Dados</h1>
+                    <p id="T2">Para manter seu cadastro sempre atualizado!</p>
+
+                    <br>
+                    <div class="text-center">
+                        <img width="150px" height="150px" src='../img/avatar1.png'  class="rounded-circle" name="fotoPerfil" id="fotoPerfil">
+                    <label class="pt-5" for='arquivo' style="width: 290px;">Atualizar foto de perfil</label>
+                        <input type="file" class="open" id="arquivo" accept="image/png, image/jpeg" name="arquivo">
+                    </div>
+                    <br>
+                    <br>
+                 
+
+
+                    <label id="l1" for="nome"><b>Nome</b></label>
+                    <br>
+                    <input id="nomeInput" type="text" placeholder="Nome completo" style="font-family : Comfortaa; font-size:8; " name="nome" required>
+
+                    <br>
+                    <br>
+
+                    <label id="l2" for="cpf"><b>Cpf</b></label>
+
+                    <br>
+
+                    <input id="cpfInput" type="text" placeholder="insira seu cpf" style="font-family : Comfortaa; font-size:8; " name="cpf" readonly>
+
+                    <br>
+
+                    <label id="li" for="email"><b>Email</b></label>
+
+                    <br>
+
+                    <input id="emailInput" type="text" placeholder="Enter Email" style="font-family : Comfortaa; font-size:8; " name="email" required>
+
+                    <br>
+                    <br>
+
+                    <label id="l4" for="Senha"><b>Senha</b></label>
+
+                    <br>
+                    <input id="senhaInput" type="password" placeholder="********" style="font-family : Comfortaa; font-size:20; " name="senha" required>
+
+                    <br>
+                    <br>
+                   
+                    <div class="text-center" style="margin-top: 20px; margin-bottom: -80px;">
+
+                        <!--<button id="btn" type="submit" style="font-family: Comfortaa" class="registerbtn">Cadastrar</button>-->
+                        <button id="send" class="send" type="submit">
+                            
+                            <svg viewBox="0 0 90.594 59.714">
+                                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                            </svg>
+                            <span>Atualizar</span>
+                        </button>
+
+
+                        <script>
+                            const btn2 = document.getElementById('send');
+
+                            btn2.addEventListener('click', () => {
+                                btn2.classList.add('is-loading');
+
+                                // fake API call
+                                setTimeout(() => {
+                                    btn2.classList.add('is-success');
+                                    btn2.classList.remove('is-loading');
+                                }, 4000);
+                            });
+                        </script>
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+        console.log('1');
+
+    </script>
+
+
+    <!--Alterar dados cliente-->
+    <script>
+        window.onload = function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    console.log("usuario logado:" + user.email);
+                    let refLista = firebase.database().ref()
+                        .child('Cliente')
+                        .orderByChild('email')
+                        .equalTo(user.email);
+                    refLista.on('child_added', function(snap) {
+                        let cpf = snap.val().cpf;
+                        console.log('cpf:' + cpf);
+                        window.sessionStorage.setItem('cpf',cpf);
+                        document.getElementById('cpfInput').value = cpf;
+                    });
+                } else {
+                    console.log('***Deslogado/Sem usuário logado****');
+                }
+            });
+
+        }
+
+
+        function alterarDados() {
+            console.log('adas');
+            var nomeInput = document.getElementById('nomeInput');
+            var emailInput = document.getElementById('emailInput');
+            var cpfInput = document.getElementById('cpfInput');
+            var senhaInput = document.getElementById('senhaInput');
+            var btn = document.getElementById('send');
+            var postData = {
+                nome: nomeInput.value,
+                email: emailInput.value,
+                senha: senhaInput.value,
+            };
+
+            firebase.database().ref().child('Cliente').child(window.sessionStorage.getItem('cpf')).update(postData);
+        }
+
+    </script>
+    
+    <script type="text/javascript">
+     $('#arquivo').hide();
+        function enviar_imagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#fotoPerfil').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#arquivo").change(function() {
+            enviar_imagem(this);
+        });
+    </script>
+
+
+
+</body>
+
+</html>

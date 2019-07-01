@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Coffe Time - Encontre um organizador de café para seu evento!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/tela_Cliente.css">
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+
+    <style>
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+    </style>
+</head>
+
+<body onload="myFunction()">
+
+    <div id="loader" class="h-100">
+
+        <img src="../img/coffee-bean-db.gif" width="40%" id="gif">
+
+    </div>
+    <div style="display:none;" id="myDiv">
+        <!--NAVBAR-->
+        <header>
+            <nav class="navbar navbar-light mb-0 container-fluid " style="background-color: #573616; border-radius: 0;">
+                <!--style="background: url(../img/coffeeBreak_queimado.png) no-repeat; 
+                         -webkit-background-size: 100%;
+                         -moz-background-size: 100%;
+                         -o-background-size: 100%;
+                         background-size: 100%;
+                         -webkit-background-size: cover;
+                         -moz-background-size: cover;
+                         -o-background-size: cover;
+                          background-size: cover;"-->
+
+                <div class="nav-bar">
+
+
+                    <ul class="d-flex align-items-center">
+                        <div class="dropdown w-25">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="not" src="../img/icons8-lembrete-de-compromissos-30 (1).png">
+                            </a>
+
+                            <div class="dropdown-menu alert_list " id="solicitacoes" aria-labelledby="dropdownMenuLink">
+                                <div id="semNoti">
+                                   <p style="text-align: center; margin-top: 20px; margin-bottom: 20px;"> Sem Notificações<p>
+                                </div>
+                            </div>
+                        </div>
+                        <li>
+
+
+                            <!--DROPDOWN-->
+                            <div class="dropdown " style=" font-family: Comfortaa;">
+                                <button class="btn btn-secondary dropdown-toggle p-0" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent; border: none; ">
+                        <li class="usuario"><img src="../img/perfil_50.png" id="usu">Usuário</li>
+                        </button>
+
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button"><a href="../Telas/tela_AlterarDados_Cliente.html" style="font-family: Comfortaa; color: darkgrey;">Alterar Dados</a></button>
+                            <button class="dropdown-item" type="button"><a href="#infor" class="trigger-btn" data-toggle="modal" style="font-family: Comfortaa; color: darkgrey;">Informações</a></button>
+
+
+                            <button class="dropdown-item" type="button" style="font-family: Comfortaa; color: red;" data-toggle="modal" data-target="#modalExemplo">Sair</button>
+                        </div>
+                </div>
+                </li>
+                <!--DROPDOWN-->
+                </ul>
+                <!--BARRA DE PESQUISA-->
+                <a href="tela_Pesquisa.html"> <img class="ml-3 mt-3" id="lupa" src="../img/icons8-pesquisar-30.png"></a>
+
+                <!--BARRA DE PESQUISA-->
+    </div>
+
+    </nav>
+    <!--NAVBAR-->
+
+
+    <div class=" pr-0 pl-0">
+        <div class="col-sm-12 pr-0 pl-0 d-flex justify-content-center align-items-center">
+            <div class="letra w-100 h-75 mt-n5 sumir">
+
+                <img id="coracao" src="../img/coaracao-preenchido.png">
+
+                <div class="tamanho1 mt-3 sumir">
+                    Nossas categorias entram em 3 tipos de café!
+                    <hr id="linha2" class="mb-4" />
+
+
+                    <p>
+                        Como um voltado para os eventos de coffe break no estado do Amazonas,<br>
+                        detectamos a necessidade atual de obter cadastrados em nosso site empresas que forneçam <br>os serviços de café regional, clássico e gourmet, com algumas personalizações negociadas entre<br>empresa e comprador durante a negociação do café.
+
+                    </p>
+
+                </div>
+
+            </div>
+            <video class="bg_video" autoplay loop muted>
+                <source src="../video/CoffeeTime background ‐ Made with Clipchamp.mp4" type="video/mp4">
+            </video>
+
+        </div>
+    </div>
+    </header>
+
+
+
+
+
+    <div class="container" style="height:700px">
+        <p class=" mt-5" id="titulo" style="font-size:25px; text-align: center;line-height:40px;"> Registramos sua agenda de cafés</p>
+        <hr id="linha3" />
+        <br>
+        <br>
+
+        <div class="w-100 d-flex justify-content-center pb-4">
+            <select id="listaEventos" class="custom-select">
+                
+                    <option>Lista de Eventos</option>
+            
+            </select>
+        </div>
+        <button type="button" class="btn btn-secondary mb-5" id="btnSelect" data-toggle="modal" data-target="#m-notificacao">Selecionar</button>
+
+        <div class="h-100 w-100">
+            <div class="slideshow-container d-flex justify-content-center" id="slideEventos" style="height: 350px">
+
+                <div class="mySlides fade" style="position: absolute; top:50%">
+                    <h1>Aguarde...</h1>
+                </div>
+
+
+            </div>
+            <br>
+
+            <div style="text-align:center" id="div-dots">
+                <span class="dot"></span>
+            </div>
+           
+        </div>
+
+    </div>
+
+    <div class="container-fluid px-0">
+        <div id="backfoto" class="row mx-0">
+            <div class="col-sm-12 pr-0 pl-0 d-flex justify-content-center align-items-center">
+                <div class="letra w-100 h-75 mt-n5">
+
+                    <i class="fas fa-star"></i>
+
+                    <div class="tamanho1 mt-3">
+                        Antes de se certificar de um evento, consulte suas notificações
+                        <hr id="linha2" class="mb-4" />
+
+
+                        <p>
+                            Todo o acerto do evento, bem como desde o seu pedido até a aceitação da empresa organizadora<br>do evento será acompanhado e informado através desta função.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container" style="height:300px;">
+        <p class=" mt-5" id="titulo" style="font-size:25px; text-align: center;line-height:40px;">Tipos de Café</p>
+        <hr id="linha3" class="mb-3" />
+        <div id="car">
+            <ul id="c">
+
+                <li  class="bg-transparent">  
+                    <p><strong><img id="diminuir" class=" rounded-circle "  src="../img/expresso.png"></strong></p>
+                    <p>Café Expresso</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle " width="200" height="200" src="../img/cafe_leite.jpg"></strong></p>
+                    <p>Café com leite</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle " width="200" height="200" src="../img/cappuccino.jpg"></strong></p>
+                    <p>Capuccino</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle " width="200" height="200" src="../img/Mocha.jpg"></strong></p>
+                    <p>Mocha</p>
+                </li>
+
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/pingado.jpg"></strong></p>
+                    <p>Pingado</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/latte.jpg"></strong></p>
+                    <p>Café Latte</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/breve.jpg"></strong></p>
+                    <p>Café Breve</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/macchiato.jpg"></strong></p>
+                    <p>Macchiato</p>
+                </li>
+
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/cafe_panna.jpg"></strong></p>
+                    <p>Café com Panna</p>
+                </li>
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/chantilly.jpg"></strong></p>
+                    <p>Café com Chantilly</p>
+                </li>
+
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/cafe-tradicional.jpg"></strong></p>
+                    <p>Café Tradicional</p>
+                </li>
+
+                <li>
+                    <p><strong><img id="diminuir" class="rounded-circle" width="200" height="200" src="../img/gourmet.jpg"></strong></p>
+                    <p>Café Gourmet</p>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="container">
+
+            <div class="col-sm-12 " align="center">
+                <img src="../img/icons8-copas-30.png" style=" margin-bottom:10px; ">
+                <p id="titulo" style="text-align: center;line-height:40px;"> Qual a importância de uma Empresa para meu evento?</p>
+                <hr id="linha1" />
+
+
+                <p id="texto" style="text-align: center; line-height:40px;"> Além do ato convencional de observarmos na prática a credibilidade que uma Empresa trás a qualquer evento, especialistas sugerem uma Empresa como algo impressidível, seja em palestras,
+                    seções de aulões ou eventos corporativos no geral como uma maneira inteligente de agregar
+                    valor e status ao evento, promovendo uma avaliação melhor de seus clientes, que são os
+                    compradores do evento.
+                </p>
+            </div>
+
+
+
+        </div>-->
+
+
+    <div class="container-fluid px-0" id="rodape" >
+        <footer>
+
+            <div class="coluna">
+                <h3>Sobre o CoffeeTime</h3>
+
+                <p><a id="link" href="#">Esclarecimentos da plataforma</a></p>
+                <p><a id="link" href="#">Sobre o CoffeeTime</a></p>
+                <p><a id="link" href="#">Fale Conosco</a></p>
+
+            </div>
+
+            <div class="coluna">
+                <h3>Serviços</h3>
+
+                <p><a id="link" href="#">Agradecimentos da Equipe</a></p>
+
+            </div>
+
+            <div class="coluna">
+                <h3>Siga-nos</h3>
+
+                <p><a id="link" href="#"><i class="fab fa-facebook mr-2"></i>Facebook</a></p>
+                <p><a id="link" href="https://www.instagram.com/oicoffeetime"><i class="fab fa-instagram mr-2"></i>Instagram</a></p>
+                <p><a id="link" href="https://twitter.com/coffeetime2019"><i class="fab fa-twitter mr-2"></i>Twitter</a></p>
+
+            </div>
+        </footer>
+    </div>
+
+    </div>
+
+
+
+
+    <!--INFORMAÇÔES-->
+    <div id="infor" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="login-div" class="modal-content" style="height: 600px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                    Informações</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <!--EMPRESAS FAVORITADAS-->
+    <div id="favorito" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="login-div" class="modal-content" style="height: 600px">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                    Favoritos</h2>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    
+    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tem certeza que deseja sair?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary" id="btnSair">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="m-notificacao" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="login-div" class="modal-content" style="height: 900px">
+                <div class="modal-header">
+                    <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                        Evento</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Nome do Evento:</b></label>
+                            <input type="text" class="form-control" id="nomeEv" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Local:</b></label>
+                            <input type="text" class="form-control" id="localEv" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Tipo de café:</b></label>
+                            <input type="text" class="form-control" id="tipoEv" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Preço</b></label>
+                            <input type="text" class="form-control" id="precoEv" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Descrição</b></label>
+                            <input type="text" class="form-control" id="desEv" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Numero de Pessoas:</b></label>
+                            <input type="number" class="form-control" id="numPes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer  d-flex justify-content-center">
+
+                    <button id="btnRecusarModal" class="send" type="submit">
+
+
+                        <span>OK</span>
+                    </button>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Funcão sair Cliente-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+
+    <script>
+        var timer = 12000;
+
+        var i = 0;
+        var max = $("#c > li").length;
+
+        $("#c > li")
+            .eq(i)
+            .addClass("active")
+            .css("left", "0");
+        $("#c > li")
+            .eq(i + 1)
+            .addClass("active")
+            .css("left", "25%");
+        $("#c > li")
+            .eq(i + 2)
+            .addClass("active")
+            .css("left", "50%");
+        $("#c > li")
+            .eq(i + 3)
+            .addClass("active")
+            .css("left", "75%");
+
+        setInterval(function() {
+            $("#c > li").removeClass("active");
+
+            $("#c > li")
+                .eq(i)
+                .css("transition-delay", "0.25s");
+            $("#c > li")
+                .eq(i + 1)
+                .css("transition-delay", "0.5s");
+            $("#c > li")
+                .eq(i + 2)
+                .css("transition-delay", "0.75s");
+            $("#c > li")
+                .eq(i + 3)
+                .css("transition-delay", "1s");
+
+            if (i < max - 4) {
+                i = i + 4;
+            } else {
+                i = 0;
+            }
+
+            $("#c > li")
+                .eq(i)
+                .css("left", "0")
+                .addClass("active")
+                .css("transition-delay", "1.25s");
+            $("#c > li")
+                .eq(i + 1)
+                .css("left", "25%")
+                .addClass("active")
+                .css("transition-delay", "1.5s");
+            $("#c > li")
+                .eq(i + 2)
+                .css("left", "50%")
+                .addClass("active")
+                .css("transition-delay", "1.75s");
+            $("#c > li")
+                .eq(i + 3)
+                .css("left", "75%")
+                .addClass("active")
+                .css("transition-delay", "2s");
+        }, timer);
+
+    </script>
+
+
+
+
+
+
+    <script>
+        let cpf;
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log("usuario logado:" + user.email);
+                let refLista = firebase.database().ref().child('Cliente').orderByChild('email').equalTo(user.email);
+                refLista.on('child_added', function(snapCli) {
+                    cpf = snapCli.val().cpf;
+                    firebase.database().ref().child('Evento').on('child_added', function(snapNomeEvento) {
+
+                        firebase.database().ref().child('Evento/' + snapNomeEvento.key).on('value', function(snap) {
+                            console.log('ta agendado: ' + snap.val().agendado);
+                            console.log('cpf do evento: ' + snap.val().cpf);
+                            console.log('cpf obtido aq: ' + cpf);
+                            if (snap.val().agendado && snap.val().cpf == cpf) {
+                                $('#listaEventos').append('<option>' + snap.val().nomeEvento + '</option>');
+                                let str = '<div class="mySlides fade">'
+                                str = str + '<div class="numbertext">Eventos:</div>'
+                                str = str + '<div class="card text-center" style="width: 18rem;border-radius:25px; color:#840705; font-family:Comfortaa;">';
+                                str = str + '<div class="card-body">';
+                                str = str + '<h5 class="card-title font-weight-bold" style="font-size:18px">' + snap.val().nomeEvento + '</h5><br>'
+                                str = str + '<div class="card-text px-2" style="font-size:12px;">'
+                                str = str + '<p class="text-left">' + snap.val().tipoCafe + '</p>'
+                                str = str + '<p class="text-left">' + snap.val().local + '</p>'
+                                str = str + '</div><br>'
+                                str = str + '<a href="#" class="btn btn-primary" style="border-radius:10px; background-color:#840705; border-color:#840705;">saiba mais</a>'
+                                str = str + '</div></div>';
+
+                                $('#slideEventos').append(str);
+                                $('#div-dots').append('<span class="dot"></span>');
+                            }
+
+                        })
+                    })
+
+                    firebase.database().ref().child('Evento').on('child_added', function(snapNomeEvento) {
+                        firebase.database().ref().child('Evento/' + snapNomeEvento.key).on('value', function(snap) {
+                            console.log(snap.val().visto);
+                            console.log(snap.val().nomeEvento);
+
+                            if (snap.val().agendado && snap.val().cpf == cpf && !snap.val().vistoCliente) {
+                                $('#semNoti').hide();
+                                let string = '<div data-alert_id="1" class="alert_li">';
+                                string = string + '<a href="#" class="alert_message">Solicitação agendada:' + snap.val().nomeEvento + '</a>';
+                                string = string + '<br>';
+                                string = string + '<a  href="#m-notificacao"  data-value="' + snap.val().nomeEvento + '" class="turn_off_alert clica trigger-btn" data-toggle="modal">Visualizar </a>';
+                                string = string + '<div class="clearfix"></div>';
+                                string = string + '<div class="dropdown-divider"></div>'
+                                string = string + '</div>';
+
+                                $('#solicitacoes').append(string);
+
+                                $('.clica').click(function(e) {
+                                    window.sessionStorage.setItem('evento', $(this).data('value'));
+                                    firebase.database().ref().child('Evento/' + $(this).data('value')).on('value', function(snapEve) {
+                                        $('#nomeEv').val(snapEve.val().nomeEvento);
+                                        $('#localEv').val(snapEve.val().local);
+                                        $('#numPes').val(snapEve.val().numeroPessoas);
+                                        $('#desEv').val(snapEve.val().descricao);
+                                        $('#precoEv').val(snapEve.val().preco);
+                                        $('#tipoEv').val(snapEve.val().tipoCafe);
+                                    })
+                                });
+
+                            }
+
+                        })
+                    })
+
+                });
+            } else {
+                console.log('***Deslogado/Sem usuário logado****');
+            }
+        })
+
+    </script>
+
+
+    <script>
+        var myVar;
+        var bodyx = document.getElementsByTagName("body")[0];
+
+        function myFunction() {
+            bodyx.style.backgroundColor = "#eeeeee";
+            myVar = setTimeout(showPage, 2900);
+
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+            bodyx.style.backgroundColor = "white";
+        }
+
+    </script>
+
+    <script>
+        setInterval(telaTam, 1000);
+
+        function telaTam() {
+
+            if (window.matchMedia("(max-width: 700px)").matches) {
+                $('#lupa').attr('width', '25px')
+                $('#lupa').attr('height', '25px')
+
+                $('usu').css('width:25px;')
+                $('usu').css('height:25px;')
+
+                $('not').css('width:250px;')
+                $('not').css('height:25px;')
+
+
+                console.log("tela<700px");
+            } else {
+                $('#lupa').attr('width', '40px')
+                $('#lupa').attr('height', '40px')
+
+                $('usu').css('width:25px;')
+                $('usu').css('height:25px;')
+
+                $('not').css('width:250px;')
+                $('not').css('height:25px;')
+
+                console.log("tela>700px");
+            }
+        }
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    console.log("usuario logado:" + user.email);
+                } else {
+                    console.log('***Deslogado/Sem usuário logado****');
+                }
+            })
+            $('#btnSair').click(function() {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(function() {
+                        window.location = 'Index.html';
+                    }, function(error) {
+                        console.error(error);
+                    });
+            })
+        });
+
+    </script>
+    <script>
+        $('#btnRecusarModal').click(function() {
+            var data = {
+                vistoCliente: true
+            };
+            let nomeEvento = window.sessionStorage.getItem('evento');
+            firebase.database().ref().child('Evento').child(nomeEvento).update(data);
+            setTimeout(function() {
+                location.reload();
+            }, 1000)
+        });
+        $('#btnSelect').click(function(e) {
+            $('#btnRecusarModal').hide();
+            let eventoSel = $("#listaEventos option:selected");
+            
+            console.log(eventoSel.val())
+            firebase.database().ref().child('Evento/' + eventoSel.val()).on('value', function(snapEve) {
+                $('#nomeEv').val(snapEve.val().nomeEvento);
+                $('#localEv').val(snapEve.val().local);
+                $('#numPes').val(snapEve.val().numeroPessoas);
+                $('#desEv').val(snapEve.val().descricao);
+                $('#precoEv').val(snapEve.val().preco);
+                $('#tipoEv').val(snapEve.val().tipoCafe);
+            })
+        });
+
+    </script>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+
+    </script>
+
+</body>
+
+</html>

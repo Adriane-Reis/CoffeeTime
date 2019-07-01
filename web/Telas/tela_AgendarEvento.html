@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/tela_AgendarEvento.css">
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+    <title>Coffee Time - Cadastre sua empresa em nosso site! </title>
+
+
+</head>
+
+<body>
+    <div class="bodysquare">
+        <img src="../img/coffeeTime_branco_solido.png" id="logo" width="410px" height="210px">
+        <div id="fundoexterno">
+            <div id="fundo">
+            </div>
+        </div>
+
+        <div class="w-100">
+               
+            <form action="javascript: agendarEvento();">
+  <div class="alert alert-success" id="sucesso" align="center" style="display: none; z-index: 10000;">
+                <strong>Evento Agendado!</strong>
+            </div>
+
+                <div class="mainform mx-auto">
+                    <h1 id="T1">Agendar Eventos </h1>
+                    <p id="T2">e ganhe dinheiro pela nossa plataforma</p>
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <label id="ne" for="nomeEv"><b>Nome do Evento</b></label>
+                    <br>
+                    <input id="nomeEv" type="text" placeholder="Insira o nome do evento" style="font-family : Comfortaa; font-size:8; " name="nome" required>
+                    <br><br><br>
+
+                    <label id="cnpjev" for="cnpjEv"><b>Local</b></label>
+                    <br>
+                    <input id="localEv" type="text" placeholder="Insira o local do evento" style="font-family : Comfortaa; font-size:8; " name="cnpj" required>
+                    <br><br><br>
+
+                    <label id="te" for="cafe"><b>Tipo de café</b></label>
+                    <br>
+                    <input id="cafe" type="text" placeholder="Insira o tipo do café" style="font-family : Comfortaa; font-sizec:8; " name="telefone" required>
+                    <br><br><br>
+
+                    <label id="preco" for="especialidade"><b>Preço</b></label>
+                    <br>
+                    <input id="precoEv" type="text" placeholder="Insira o preço do evento" style="font-family : Comfortaa; font-size:8; " name="especialidade" required>
+                    <br><br><br>
+
+                    <label id="de" for="Descricao"><b>Descrição</b></label>
+                    <br>
+                    <input id="descEv" type="text" placeholder="Insira uma descrição para o evento" style="font-family : Comfortaa; font-size:8; " name="descricao" required>
+                    <br><br><br>
+
+                    <label id="pme" for="precoMin"><b>Numero de Pessoas</b></label>
+                    <br>
+                    <input id="nEv" type="text" placeholder="Insira o numero de pessoas" style="font-family : Comfortaa; font-size:8; " name="precoMin" required>
+                    <br><br><br>
+
+                    <div class="text-center" style="margin-top: 20px; margin-bottom: -80px;">
+
+                        <!--<button id="btn" type="submit" style="font-family: Comfortaa" class="registerbtn">Cadastrar</button>-->
+                        <button id="btn" class="send" type="submit">
+
+                           
+                            <span>Agendar</span>
+                        </button>
+
+
+                        <!-- <script>
+                            const btn2 = document.getElementById('send');
+
+                            btn2.addEventListener('click', () => {
+                                btn2.classList.add('is-loading');
+
+                                // fake API call
+                                setTimeout(() => {
+                                    btn2.classList.add('is-success');
+                                    btn2.classList.remove('is-loading');
+                                }, 4000);
+                            });
+                        </script>-->
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+        console.log('1');
+    </script>
+
+    <!--Funcionalidade cadastrar empresa-->
+    <script>
+        function agendarEvento() {
+
+            
+            var nomeEv = document.getElementById('nomeEv');
+            var localEv = document.getElementById('localEv');
+            var cafe = document.getElementById('cafe');
+            var precoEv = document.getElementById('precoEv');
+            var descEv = document.getElementById('descEv');
+            var nEv = document.getElementById('nEv');
+
+
+            btn.addEventListener('click', function() {
+                agendamento(nomeEv.value, localEv.value, cafe.value, precoEv.value, descEv.value, nEv.value);
+            });
+
+            function agendamento(nomeEvento, local, tipoCafe, preco, descricao, numeroPessoas) {
+
+                console.log(nomeEvento);
+                console.log(local);
+                console.log(tipoCafe);
+                console.log(preco);
+                console.log(descricao);
+                console.log(numeroPessoas);
+                var data = {
+                    nomeEvento: nomeEvento,
+                    local: local,
+                    tipoCafe: tipoCafe,
+                    preco: preco,
+                    descricao: descricao,
+                    numeroPessoas: numeroPessoas,
+                    vistoEmpresa: true,
+                    vistoCliente: false,
+                    agendado: true
+                };
+                
+                 $('#sucesso').show(1000);
+                console.log("5");
+                firebase.database().ref().child('Evento').child(nomeEvento).update(data);
+
+
+            };
+
+
+
+        }
+    </script>
+    <script>
+        let nomeEvento = window.sessionStorage.getItem('evento');
+        firebase.database().ref().child('Evento/' + nomeEvento).on('value', function(snapEve) {
+            $('#nomeEv').val(snapEve.val().nomeEvento);
+            $('#nEv').val(snapEve.val().numeroPessoas);
+        })
+    </script>
+</body></html>

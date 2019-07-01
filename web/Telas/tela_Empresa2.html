@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html >
+
+<head>
+    <title>Coffe Time - Encontre um organizador de café para seu evento!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/tela_Empresa2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+</head>
+
+<body onload="myFunction()">
+
+    <div id="loader" class="h-100">
+
+        <img src="../img/coffee-bean-db.gif" width="40%" id="gif">
+
+    </div>
+
+    <div style="display:none;" id="myDiv">
+        <nav class="navbar navbar-light bg-light " style="background: url(../img/coffeeBreak_queimado.png) no-repeat; 
+             -webkit-background-size: 100%;
+             -moz-background-size: 100%;
+             -o-background-size: 100%;
+             background-size: 100%;
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+             -o-background-size: cover;
+              background-size: cover;">
+
+            <div class="nav-bar">
+
+                <ul class="d-flex align-items-center">
+                    <div class="dropdown w-25">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="not" src="../img/icons8-lembrete-de-compromissos-30 (1).png">
+                        </a>
+
+                        <div class="dropdown-menu alert_list " id="solicitacoes" aria-labelledby="dropdownMenuLink">
+                            <div id="semNoti">
+                                Sem Notificacao
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <li>
+                        <a href="#" id="notificacao" class="btn"><img id="not" src="../img/icons8-lembrete-de-compromissos-30 (1).png"></a>
+                    </li>
+                    <div style="display:none" class="alert_list">
+                        <ul class="unstyled n">
+
+
+                        </ul>
+                    </div>
+                    -->
+
+                    <div class="dropdown" style="display:inline-block ; font-family: Comfortaa;">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent; border: none;">
+                            <li class="usuario"><img src="../img/perfil_50.png">Empresa</li>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button"><a href="tela_AlterarDados_Empresa.html">Alterar Dados</a></button>
+                            <button class="dropdown-item" type="button"><a href="#foto" class="trigger-btn" data-toggle="modal">Alterar foto de perfil</a></button>
+                            <button class="dropdown-item" type="button"><a href="#infor" class="trigger-btn" data-toggle="modal">Informações</a></button>
+                            <button class="dropdown-item" type="button"><a href="tela_AgendarEvento.html">Agendar Evento</a></button>
+
+                            <button class="dropdown-item" type="button">Sair</button>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid" style="margin-top: 50px">
+            <div class="corpo">
+
+                <div class="rol">
+                    <div class="col-sm-12 mt-5 mb-5 ml-3 ">
+
+                        <a href="#m-notificacao" class="trigger-btn" data-toggle="modal"><img src="../img/icons8-copas-30.png" style="position: absolute; top: -5px;"></a>
+                        <p style="margin-left: 40px;">Meus Eventos</p>
+
+                        <div id="fancy" class="col-sm-12 p-5">
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="rol">
+                    <div class="col-sm-12 " align="center">
+                        <img src="../img/icons8-copas-30.png" style=" margin-bottom:10px; ">
+                        <p style="text-align: center;line-height:40px;"> Qual a importância do CoffeTime para meu evento?</p>
+                        <hr id="linha1" />
+
+
+                        <p id="texto" style="text-align: center; line-height:40px;"> Além do ato convencional de observarmos na prática a credibilidade que um CoffeBreak trás
+                            a qualquer evento, especialistas sugerem o CoffeBreak como algo impressidível, seja em palestras,
+                            seções de aulões ou eventos corporativos no geral como uma maneira inteligente de agregar
+                            valor e status ao evento, promovendo uma avaliação melhor de seus clientes, que são os
+                            compradores do evento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid px-0" id="rodape" style="margin-top: -10px;">
+            <footer>
+
+                <div class="coluna">
+                    <h3>Sobre o CoffeeTime</h3>
+
+                    <p>Agradecimentos da Equipe</p>
+                    <p>Fale Conosco</p>
+                    <p>Esclarecimentos da plataforma</p>
+                </div>
+
+                <div class="coluna">
+                    <h3>Serviços</h3>
+
+                    <p>Agradecimentos da Equipe</p>
+
+                </div>
+
+                <div class="coluna">
+                    <h3>Siga-nos</h3>
+
+                    <p>Instagram</p>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!--FOTO DE PERFIL-->
+    <div id="foto" class="modal fade">
+        <div class="modal-dialog modal-login">
+
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:white;">&times;</button>
+
+                <p style=" font-family: Comfortaa; text-align: center; color: white; font-size:20px; margin-right: 200px; margin-top: 30px; ">Alterar Foto</p>
+
+
+            </div>
+            <img src="../img/perfil_50.png" style="width: 200px; height: 200px; position: absolute; right: 180px; ">
+
+
+        </div>
+    </div>
+
+
+    <!--INFORMAÇÔES-->
+    <div id="infor" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="login-div" class="modal-content" style="height: 600px">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                    Informações</h2>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="m-notificacao" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div id="login-div" class="modal-content" style="height: 600px">
+                <div class="modal-header">
+                    <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                        Solicitação</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Email do cliente:</b></label>
+                            <input type="text" class="form-control" id="emailCli" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Nome do Evento:</b></label>
+                            <input type="text" class="form-control" id="nomeEve" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Numero de Pessoas:</b></label>
+                            <input type="number" class="form-control" id="numPes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer  d-flex justify-content-center">
+
+                    <button id="btnRecusarModal" class="send" type="submit">
+
+                        <svg viewBox="0 0 90.594 59.714">
+                            <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                        </svg>
+                        <span>Recusar</span>
+                    </button>
+
+                    <a href="tela_AgendarEvento.html">
+                        <button id="btnAceitarModal" class="send" type="submit">
+
+                            <svg viewBox="0 0 90.594 59.714">
+                                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                            </svg>
+                            <span>Aceitar</span>
+                        </button>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var myVar;
+        var bodyx = document.getElementsByTagName("body")[0];
+
+        function myFunction() {
+            bodyx.style.backgroundColor = "#eeeeee";
+            myVar = setTimeout(showPage, 2900);
+
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+            bodyx.style.backgroundColor = "white";
+        }
+        
+        $('#btnRecusarModal').click(function(){
+            let nomeEvento = window.sessionStorage.getItem('evento');
+            firebase.database().ref().child('Evento').child(nomeEvento).update({vistoEmpresa: true});
+             setTimeout(function(){
+                location.reload();
+            },1000)
+        });
+    </script>
+
+    <script>
+        let cnpj;
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log("usuario logado:" + user.email);
+                let refLista = firebase.database().ref().child('Empresa').orderByChild('email').equalTo(user.email);
+                refLista.on('child_added', function(snap) {
+                    cnpj = snap.val().cnpj;
+ console.log("usuario logado:" + user.email);
+
+                    firebase.database().ref().child('Evento').on('child_added', function(snapNomeEvento) {
+                        
+                        console.log('sim');
+                        firebase.database().ref().child('Evento/' + snapNomeEvento.key).on('value', function(snap) {
+console.log('sim2');
+                            if (!snap.val().vistoEmpresa && snap.val().cnpj == cnpj) {
+                                encontrouAlgoNotificacao = true;
+                                console.log('sim3');
+                                $('#semNoti').hide();
+                                let string = '<div data-alert_id="1" class="alert_li">';
+                                string = string + '<a href="#" class="alert_message">Solicitação de contratação:' + snap.val().nomeEvento + '</a>';
+                                string = string + '<br>';
+                                string = string + '<a  href="#m-notificacao"  data-value="' + snap.val().nomeEvento + '" class="turn_off_alert clica trigger-btn" data-toggle="modal">Visualizar </a>';
+                                string = string + '<div class="clearfix"></div>';
+                                string = string + '<div class="dropdown-divider"></div>'
+                                string = string + '</div>';
+
+                                $('#solicitacoes').append(string);
+
+                                $('.clica').click(function(e) {
+                                    window.sessionStorage.setItem('evento', $(this).data('value'));
+                                    firebase.database().ref().child('Evento/' + $(this).data('value')).on('value', function(snapEve) {
+                                        $('#emailCli').val(snapEve.val().emailCliente);
+                                        $('#nomeEve').val(snapEve.val().nomeEvento);
+                                        $('#numPes').val(snapEve.val().numeroPessoas);
+                                    })
+                                });
+
+                            }
+
+                        })
+                    })
+
+                });
+            } else {
+                console.log('***Deslogado/Sem usuário logado****');
+            }
+        })
+        
+
+    </script>
+
+</body>
+
+</html>

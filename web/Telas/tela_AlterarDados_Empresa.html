@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro_Cliente.css">
+    <link rel="shortcut icon" href="../img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>Coffee Time - Cadastre sua empresa em nosso site! </title>
+
+
+
+</head>
+
+<body>
+    
+    <div class="bodysquare">
+        <img src="../img/coffeeTime_branco_solido.png" id="logo" width="410px" height="210px">
+        <div id="fundoexterno">
+            <div id="fundo">
+            </div>
+        </div>
+        
+        <div class="w-100">
+        
+        <form action="javascript: alterarDados();">
+
+
+            <div class="mainform mx-auto">
+                <h1 id="T1">Alterar Dados </h1>
+                <p id="T2">Para manter seu cadastro sempre atualizado!</p>
+                <br><br><br>
+
+
+                <label id="ne" for="nome"><b>Nome</b></label>
+                <br>
+                <input id="nomeEmp" type="text" placeholder="Insira o nome da empresa" style="font-family : Comfortaa; font-size:8; " name="nome" required>
+                <br><br><br>
+
+                <label id="cnpje" for="cnpj"><b>CNPJ</b></label>
+                <br>
+                <input id="cnpjEmp" type="text" placeholder="Insira o cnpj da empresa" style="font-family : Comfortaa; font-size:8; " name="cnpj" readonly>
+                <br><br><br>
+
+                <label id="te" for="telefone"><b>Telefone</b></label>
+                <br>
+                <input id="foneEmp" type="text" placeholder="Insira o n° telefone da empresa" style="font-family : Comfortaa; font-sizec:8; " name="telefone" required>
+                <br><br><br>
+
+                <label id="ee" for="especialidade"><b>Especialidades</b></label>
+                <br>
+                <input id="especialEmp" type="text" placeholder="Insira a especialidade da empresa" style="font-family : Comfortaa; font-size:8; " name="especialidade" required>
+                <br><br><br>
+
+                <label id="de" for="Descricao"><b>Descrição</b></label>
+                <br>
+                <input id="descEmp" type="text" placeholder="Insira uma descrição da empresa" style="font-family : Comfortaa; font-size:8; " name="descricao" required>
+                <br><br><br>
+
+                <label id="pme" for="precoMin"><b>Preço mínimo</b></label>
+                <br>
+                <input id="precominEmp" type="text" placeholder="Insira o valor mínimo cobrado pela empresa" style="font-family : Comfortaa; font-size:8; " name="precoMin" required>
+                <br><br><br>
+
+                <label id="ema" for="email"><b>Email</b></label>
+                <br>
+                <input id="emailEmp" type="text" placeholder="Insira seu endereço de email" style="font-family : Comfortaa; font-size:8; " name="email" required>
+                <br><br><br>
+
+                <label id="senhaa" for="senha"><b>Senha</b></label>
+                <br>
+                <input id="senhaEmp" type="password" placeholder="********" style="font-family : Comfortaa; font-size:8; " name="senha" required>
+                <br><br><br>
+
+
+                <h4>Endereço</h4>
+
+
+
+                <label id="cep" for="cep"><b>CEP</b></label>
+                <br>
+                <input id="cepEmp" type="text" placeholder="Insira o cep" style="font-family : Comfortaa; font-size:8; " name="cep" required>
+                <br><br><br>
+
+                <label id="citye" for="cidade"><b>Cidade</b></label>
+                <br>
+                <input id="cidadeEmp" type="text" placeholder="Insira a cidade" style="font-family : Comfortaa; font-size:8; " name="cidade" required>
+                <br><br><br>
+
+                <label id="be" for="bairro"><b>Bairro</b></label>
+                <br>
+                <input id="bairroEmp" type="text" placeholder="Insira o bairro" style="font-family : Comfortaa; font-size:8; " name="bairro" required>
+                <br><br><br>
+
+                <label id="re" for="rua"><b>Rua</b></label>
+                <br>
+                <input id="ruaEmp" type="text" placeholder="Insira a rua" style="font-family : Comfortaa; font-size:8; " name="rua" required>
+                <br><br><br>
+
+                <label id="number" for="numero"><b>Número</b></label>
+                <br>
+                <input id="numeroEmp" type="text" placeholder="Insira o número" style="font-family : Comfortaa; font-size:8; " name="numero" required>
+                <br>
+                <br>
+
+                    <div class="text-center" style="margin-top: 20px; margin-bottom: -80px;">
+
+                        <!--<button id="btn" type="submit" style="font-family: Comfortaa" class="registerbtn">Cadastrar</button>-->
+                        <button id="send" class="send" type="submit">
+                            
+                            <svg viewBox="0 0 90.594 59.714">
+                                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                            </svg>
+                            <span>Atualizar</span>
+                        </button>
+
+
+                        <script>
+                            const btn2 = document.getElementById('send');
+
+                            btn2.addEventListener('click', () => {
+                                btn2.classList.add('is-loading');
+
+                                // fake API call
+                                setTimeout(() => {
+                                    btn2.classList.add('is-success');
+                                    btn2.classList.remove('is-loading');
+                                }, 4000);
+                            });
+                        </script>
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+               
+            </div>
+            
+        </form>
+
+        </div>
+        
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+        console.log('1');
+
+    </script>
+    
+    <!--Alterar dados Empresa-->
+    <script>
+        var nomeEmp = document.getElementById('nomeEmp');
+        var cnpjEmp = document.getElementById('cnpjEmp');
+        var foneEmp = document.getElementById('foneEmp');
+        var especialEmp = document.getElementById('especialEmp');
+        var descEmp = document.getElementById('descEmp');
+        var precominEmp = document.getElementById('precominEmp');
+        var emailEmp = document.getElementById('emailEmp');
+        var senhaEmp = document.getElementById('senhaEmp');
+        var cepEmp = document.getElementById('cepEmp');
+        var cidadeEmp = document.getElementById('cidadeEmp');
+        var bairroEmp = document.getElementById('bairroEmp');
+        var ruaEmp = document.getElementById('ruaEmp');
+        var numeroEmp = document.getElementById('numeroEmp');
+        var btn = document.getElementById('send');
+
+        btn.addEventListener('click', function()
+
+            function writeNewPost(nome, cnpj, fone, especialidade, descricao, preco, email, senha, cep, cidade, bairro, rua, numero) {
+                var postData = {
+                    nome: nome,
+                    cnpj: cnpj,
+                    fone: fone,
+                    especialidade: especialidade,
+                    descricao: descricao,
+                    preco: preco,
+                    email: email,
+                    senha: senha,
+                    cep: cep,
+                    cidade: cidade,
+                    bairro: bairro,
+                    rua: rua,
+                    numero: numero,
+                };
+                var newPostKey = firebase.database().ref().child('posts').push().key;
+                var updates = {};
+                updates['/posts/' + newPostKey] = postData;
+                updates['/user-posts/' + cnpj + '/' + newPostKey] = postData;
+
+                return firebase.database().ref().update(updates);
+            }
+        );
+    </script>
+    
+    
+     <script>
+        window.onload = function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    console.log("usuario logado:" + user.email);
+                    let refLista = firebase.database().ref()
+                        .child('Empresa')
+                        .orderByChild('email')
+                        .equalTo(user.email);
+                    refLista.on('child_added', function(snap) {
+                        let cnpj = snap.val().cnpj;
+                        console.log('cnpj:' + cnpj);
+                        window.sessionStorage.setItem('cnpj',cnpj);
+                        document.getElementById('cnpjEmp').value = cnpj;
+                    });
+                } else {
+                    console.log('***Deslogado/Sem usuário logado****');
+                }
+            });
+
+        }
+
+
+        function alterarDados() {
+            console.log('adas');
+        var nomeEmp = document.getElementById('nomeEmp');
+        var cnpjEmp = document.getElementById('cnpjEmp');
+        var foneEmp = document.getElementById('foneEmp');
+        var especialEmp = document.getElementById('especialEmp');
+        var descEmp = document.getElementById('descEmp');
+        var precominEmp = document.getElementById('precominEmp');
+        var emailEmp = document.getElementById('emailEmp');
+        var senhaEmp = document.getElementById('senhaEmp');
+        var cepEmp = document.getElementById('cepEmp');
+        var cidadeEmp = document.getElementById('cidadeEmp');
+        var bairroEmp = document.getElementById('bairroEmp');
+        var ruaEmp = document.getElementById('ruaEmp');
+        var numeroEmp = document.getElementById('numeroEmp');
+        var btn = document.getElementById('send');
+           
+            
+             var postData = {
+                    nome: nomeEmp.value,
+                    cnpj: cnpjEmp.value,
+                    fone: foneEmp.value,
+                    especialidade: especialEmp.value,
+                    descricao: descEmp.value,
+                    preco: precominEmp.value,
+                    email: emailEmp.value,
+                    senha: senhaEmp.value,
+                    cep: cepEmp.value,
+                    cidade: cidadeEmp.value,
+                    bairro: bairroEmp.value,
+                    rua: ruaEmp.value,
+                    numero: numeroEmp.value,
+                };
+
+            firebase.database().ref().child('Empresa').child(window.sessionStorage.getItem('cnpj')).update(postData);
+        }
+
+    </script>
+
+
+    
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+
+    <title>Coffee Time - Encontre uma empresa que trabalha com coffee break para seu evento!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/perfil.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/UnidadeIconeCoffeeTime.ico" type="image/x-icon" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDIHG7cHvQzi-QSu8zsKy4di9vUHwAIBQg",
+            authDomain: "coffee-time-9f310.firebaseapp.com",
+            databaseURL: "https://coffee-time-9f310.firebaseio.com",
+            projectId: "coffee-time-9f310",
+            storageBucket: "coffee-time-9f310.appspot.com",
+            messagingSenderId: "437129170066"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/real-time-database.js"></script>
+
+</head>
+
+<body>
+
+    <div class="w-100">
+        <div id="fundoexterno">
+
+            <div id="fundo">
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="mainform mx-auto">
+            <h1 id="T1">Perfil</h1>
+            <p id="T2"></p>
+
+            <br>
+            <div class="text-center">
+                <img width="150px" height="150px" src='../img/avatar1.png' class="rounded-circle" name="fotoPerfil" id="fotoPerfil">
+
+                <input type="file" class="open" id="arquivo" accept="image/png, image/jpeg" name="arquivo">
+
+
+
+                <br>
+                <br>
+
+
+                <label id="ne" for="nome"><b>Nome</b></label>
+                <br>
+                <input id="nomeEmp" type="text" placeholder="Insira o nome da empresa" style="font-family : Comfortaa; font-size:8; " name="nome" required readonly>
+                <br><br><br>
+
+
+
+                <label id="te" for="telefone"><b>Telefone</b></label>
+                <br>
+                <input id="foneEmp" type="text" placeholder="Insira o n° telefone da empresa" style="font-family : Comfortaa; font-sizec:8; " name="telefone" required readonly>
+                <br><br><br>
+
+                <label id="ee" for="especialidade"><b>Especialidades</b></label>
+                <br>
+                <input id="especialEmp" type="text" placeholder="Insira a especialidade da empresa" style="font-family : Comfortaa; font-size:8; " name="especialidade" required readonly>
+                <br><br><br>
+
+                <label id="de" for="Descricao"><b>Descrição</b></label>
+                <br>
+                <input id="descEmp" type="text" placeholder="Insira uma descrição da empresa" style="font-family : Comfortaa; font-size:8; " name="descricao" required readonly>
+                <br><br><br>
+
+                <label id="pme" for="precoMin"><b>Preço mínimo</b></label>
+                <br>
+                <input id="precominEmp" type="text" placeholder="Insira o valor mínimo cobrado pela empresa" style="font-family : Comfortaa; font-size:8; " name="precoMin" required readonly>
+                <br><br><br>
+
+                <label id="ema" for="email"><b>Email</b></label>
+                <br>
+                <input id="emailEmp" type="text" placeholder="Insira seu endereço de email" style="font-family : Comfortaa; font-size:8; " name="email" required readonly>
+                <br><br><br>
+
+
+                <h4>Endereço</h4>
+
+                <label id="citye" for="cidade"><b>Cidade</b></label>
+                <br>
+                <input id="cidadeEmp" type="text" placeholder="Insira a cidade" style="font-family : Comfortaa; font-size:8; " name="cidade" required readonly>
+                <br><br><br>
+
+                <label id="be" for="bairro"><b>Bairro</b></label>
+                <br>
+                <input id="bairroEmp" type="text" placeholder="Insira o bairro" style="font-family : Comfortaa; font-size:8; " name="bairro" required readonly>
+                <br><br><br>
+
+                <label id="re" for="rua"><b>Rua</b></label>
+                <br>
+                <input id="ruaEmp" type="text" placeholder="Insira a rua" style="font-family : Comfortaa; font-size:8; " name="rua" required readonly>
+                <br><br><br>
+
+                <label id="number" for="numero"><b>Número</b></label>
+                <br>
+                <input id="numeroEmp" type="text" placeholder="Insira o número" style="font-family : Comfortaa; font-size:8; " name="numero" required readonly>
+                <br>
+                <br>
+
+
+
+                <div class="text-center" style="margin-top: 20px; margin-bottom: -80px;">
+
+                    <!--<button id="btn" type="submit" style="font-family: Comfortaa" class="registerbtn">Cadastrar</button>-->
+                    <a href="#contratar" class="trigger-btn " data-toggle="modal">
+                        <button id="send" class="send" type="submit">
+
+                            <svg viewBox="0 0 90.594 59.714">
+                                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768" />
+                            </svg>
+                            <span>Solicitação de Contratação</span>
+                        </button>
+
+                    </a>
+
+
+                </div>
+
+
+                <br>
+                <br>
+                <br>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--CONTRATAR-->
+    <div id="contratar" class="modal fade">
+        <div class="modal-dialog modal-login">
+
+
+            <div class="alert alert-success" id="sucesso" align="center" style="display: none">
+                <strong>Solicitação enviada!</strong>
+            </div>
+            <div id="login-div" class="modal-content" style="height: 600px">
+                <div class="modal-header">
+                    <h2 style="font-family: Comfortaa;color:#000000;font-size:30px;text-align: center;margin-top: 40px;margin-bottom: 40px">
+                        Solicitação</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
+                <form>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Nome do Evento:</b></label>
+                            <input type="text" class="form-control" id="recipient-name" placeholder="Digite o nome do seu evento" required>
+                        </div>
+                        <div class="form-group">
+                            <label id="ne" for="nome"><b>Numero de Pessoas:</b></label>
+                            <input type="number" class="form-control" id="recipient-number" placeholder="Digite a quantidade de participantes" required>
+                        </div>
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="modal-footer  d-flex justify-content-center">
+
+                        <button id="btnEnviarModal" class="send" type="submit">
+
+
+                            <span>Enviar</span>
+                        </button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $('#arquivo').hide();
+
+        function enviar_imagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#fotoPerfil').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#arquivo").change(function() {
+            enviar_imagem(this);
+        });
+    </script>
+
+    <script>
+        let cnpj;
+        $(document).ready(function() {
+            let emp = window.sessionStorage.getItem('Empresa');
+            firebase.database().ref('Empresa').on('child_added', function(snap) {
+                console.log('snap: ' + snap.key);
+
+                firebase.database().ref('Empresa/' + snap.key).on('value', function(snap) {
+                    console.log('snap: ' + snap.val().nome);
+                    if (snap.val().nome == emp) {
+                        $('#nomeEmp').val(snap.val().nome);
+                        $('#foneEmp').val(snap.val().telefone);
+                        $('#especialEmp').val(snap.val().especialidades);
+                        $('#descEmp').val(snap.val().descricao);
+                        $('#precominEmp').val(snap.val().preco);
+                        $('#emailEmp').val(snap.val().email);
+                        $('#cidadeEmp').val(snap.val().cidade);
+                        $('#bairroEmp').val(snap.val().bairro);
+                        $('#ruaEmp').val(snap.val().rua);
+                        $('#numeroEmp').val(snap.val().numero);
+                        cnpj = snap.val().cnpj;
+                    }
+                })
+            })
+        });
+
+        let emailCliente;
+        let cpf;
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log("usuario logado:" + user.email);
+                emailCliente = user.email;
+                let refLista = firebase.database().ref().child('Cliente').orderByChild('email').equalTo(emailCliente);
+                refLista.on('child_added', function(snapCli) {
+                    cpf = snapCli.val().cpf;
+                })
+            } else {
+                console.log('***Deslogado/Sem usuário logado****');
+            }
+        })
+        $('#btnEnviarModal').click(function() {
+            var nomeEvento = document.getElementById('recipient-name');
+            var numeroPessoas = document.getElementById('recipient-number');
+
+            $('#sucesso').show(1000);
+            var dados = {
+                cpf: cpf,
+                emailCliente: emailCliente,
+                nomeEvento: nomeEvento.value,
+                numeroPessoas: numeroPessoas.value,
+                cnpj: cnpj,
+                vistoEmpresa: false,
+                agendado: false
+
+            };
+            firebase.database().ref().child('Evento').child(nomeEvento.value).set(dados);
+
+        })
+    </script>
+    <script>
+
+    </script>
+
+
+</body></html>
